@@ -1,12 +1,14 @@
 class_name Character
 extends CharacterBody2D
-
+const VISUAL = preload("res://Scenes/visual.tscn")
 @export var characteristics : Charactersistics
 
-var color_rect: ColorRect
+var visual: CharacterVisual
 
 var direction : Vector2
 var speed : float = 200
+
+var is_dragged : bool = false
 
 
 func _ready() -> void:
@@ -15,28 +17,32 @@ func _ready() -> void:
 	create_character()
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if !direction:
 		direction = Vector2(randf_range(-1,1),randf_range(-1,1))
 	
-	velocity.x = move_toward(velocity.x, speed * direction.x, speed)
-	velocity.y = move_toward(velocity.y, speed * direction.y, speed)
-	
-	move_and_slide()
-	
-	if is_on_ceiling() || is_on_floor():
-		direction.y = -direction.y
-	
-	if is_on_wall():
-		direction.x = -direction.x
-
+	if !is_dragged:
+		velocity.x = move_toward(velocity.x, speed * direction.x, speed)
+		velocity.y = move_toward(velocity.y, speed * direction.y, speed)
+		
+		move_and_slide()
+		
+		if is_on_ceiling() || is_on_floor():
+			direction.y = -direction.y
+		
+		if is_on_wall():
+			direction.x = -direction.x
+	else:
+		velocity = Vector2.ZERO
+		global_position = get_global_mouse_position()
+		
 
 func create_character() -> void:
 	create_characteristics()
 	
 	generate_visuals()
 	
-	color_rect.color = characteristics.block.cor
+	visual.color_rect.color = characteristics.block.cor
 
 # Cria as caracteristicas do personagem caso não haja
 func create_characteristics():
@@ -60,16 +66,25 @@ func create_character_with_block(block : Blocks) -> void:
 	generate_visuals()
 		
 		
-	color_rect.color = characteristics.block.cor
+	visual.color_rect.color = characteristics.block.cor
 
 func generate_visuals():
 	
-	# hack fix, mudar pra uma função depois
-	if !color_rect:
-		color_rect = ColorRect.new()
-		add_child(color_rect)
-		color_rect.set_anchors_preset(Control.PRESET_CENTER)
-		color_rect.position = Vector2(-20,-20)
-		color_rect.size = Vector2(40,40)
-		
-	
+	if !visual:
+		visual = VISUAL.instantiate()
+		add_child(visual)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if !event.is_pressed() and is_dragged:
+			is_dragged = false
+			global_position = event.global_position
+			Globals.dragging = null
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.is_pressed() and !is_dragged and !Globals.dragging:
+				is_dragged = true
+				Globals.dragging = self
+				
