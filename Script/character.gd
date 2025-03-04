@@ -1,7 +1,9 @@
 class_name Character
 extends CharacterBody2D
 const VISUAL = preload("res://Scenes/visual.tscn")
+
 @export var characteristics : Charactersistics
+@onready var block_detector: Area2D = $BlockDetector
 
 var visual: CharacterVisual
 
@@ -9,6 +11,8 @@ var direction : Vector2
 var speed : float = 200
 
 var is_dragged : bool = false
+
+var is_in_block : bool = false
 
 
 func _ready() -> void:
@@ -18,16 +22,27 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
 	if !direction:
 		direction = Vector2(randf_range(-1,1),randf_range(-1,1))
 	
 	if !is_dragged:
-		velocity.x = move_toward(velocity.x, speed * direction.x, speed)
-		velocity.y = move_toward(velocity.y, speed * direction.y, speed)
+		if !is_in_block:
+			velocity.x = move_toward(velocity.x, speed * direction.x, speed)
+			velocity.y = move_toward(velocity.y, speed * direction.y, speed)
+			
+			
+			
+			move_and_slide()
+			if block_detector.get_overlapping_areas():
+				if block_detector.get_overlapping_areas()[0] is BlockArea:
+					var area = block_detector.get_overlapping_areas()[0]
+					direction.y = clampf(global_position.y - area.global_position.y,-1,1) 
+					direction.x = clampf(global_position.x - area.global_position.x,-1,1)  
+			
 		
-		move_and_slide()
 		
-		if is_on_ceiling() || is_on_floor():
+		if is_on_ceiling() || is_on_floor() :
 			direction.y = -direction.y
 		
 		if is_on_wall():
@@ -81,10 +96,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			is_dragged = false
 			global_position = event.global_position
 			Globals.dragging = null
+			if block_detector.has_overlapping_areas() and block_detector.get_overlapping_areas()[0] is BlockArea:
+				is_in_block = true
+				
+				
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.is_pressed() and !is_dragged and !Globals.dragging:
-				is_dragged = true
-				Globals.dragging = self
+	if !is_in_block:
+		if event is InputEventMouseButton:
+			if event.is_pressed() and !is_dragged and !Globals.dragging:
+					is_dragged = true
+					Globals.dragging = self
 				

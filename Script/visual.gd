@@ -24,6 +24,8 @@ func _ready() -> void:
 	color_rect.mouse_filter = Control.MOUSE_FILTER_PASS
 	last_position = global_position
 
+
+
 func _process(delta: float) -> void:
 	if get_parent():
 		var parent = get_parent() as Character

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c32qqil24y4sg"]
+[gd_scene load_steps=4 format=3 uid="uid://c32qqil24y4sg"]
 
 [ext_resource type="Script" uid="uid://db7qabvrx8fee" path="res://Script/character.gd" id="1_lkv7d"]
 
@@ -6,12 +6,23 @@
 radius = 14.0
 height = 50.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkv7d"]
+radius = 16.0
+height = 54.0
+
 [node name="Character" type="CharacterBody2D"]
-collision_mask = 2
+collision_mask = 6
 input_pickable = true
 script = ExtResource("1_lkv7d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_he2x2")
+
+[node name="BlockDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockDetector"]
+shape = SubResource("CapsuleShape2D_lkv7d")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

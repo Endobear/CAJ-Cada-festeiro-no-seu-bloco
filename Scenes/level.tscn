@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf2jr3jhy2kqc"]
+[gd_scene load_steps=8 format=3 uid="uid://cf2jr3jhy2kqc"]
 
 [ext_resource type="Script" uid="uid://c5plpxwyuytn4" path="res://Script/level.gd" id="1_tumq0"]
 [ext_resource type="Script" uid="uid://ch8b3titi6qjq" path="res://Script/character_spawn.gd" id="2_k5f4k"]
 [ext_resource type="Script" uid="uid://bvixhcrxsdm2v" path="res://Resources/Base/blocks.gd" id="3_6phgx"]
+[ext_resource type="PackedScene" uid="uid://bhl5ok2vc8c4n" path="res://Scenes/Block.tscn" id="4_81xng"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k5f4k"]
 
@@ -45,5 +46,8 @@ offset_top = 247.0
 offset_right = 585.0
 offset_bottom = 278.0
 text = "Spawn Thing"
+
+[node name="Block" parent="." instance=ExtResource("4_81xng")]
+position = Vector2(555, 70)
 
 [connection signal="button_up" from="Button" to="CharacterSpawn" method="_on_button_button_up"]
