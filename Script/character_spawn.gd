@@ -1,18 +1,15 @@
+class_name CharacterSpawner
 extends Marker2D
 
 @export var blocks : Array[Blocks]
 
 const CHARACTER = preload("res://Scenes/character.tscn")
 
-func _ready() -> void:
-	if !blocks:
-		blocks = [Blocks.new()]
-	
-
-
 	
 	
 func spawn_characters(amount : int) -> void :
+	if not blocks:
+		return
 	for i in amount:
 		var char = CHARACTER.instantiate()
 		

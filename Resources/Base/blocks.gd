@@ -1,3 +1,4 @@
+## Recurso que possui todas as caracteristicas dos blocos
 class_name Blocks
 extends Resource
 

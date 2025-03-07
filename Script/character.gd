@@ -8,11 +8,12 @@ const VISUAL = preload("res://Scenes/visual.tscn")
 var visual: CharacterVisual
 
 var direction : Vector2
-var speed : float = 200
+var speed : float = 100
 
 var is_dragged : bool = false
 
 var is_in_block : bool = false
+
 
 
 func _ready() -> void:
@@ -40,7 +41,7 @@ func _physics_process(delta: float) -> void:
 					direction.y = clampf(global_position.y - area.global_position.y,-1,1) 
 					direction.x = clampf(global_position.x - area.global_position.x,-1,1)  
 			
-		
+			visual.play("Walking")
 		
 		if is_on_ceiling() || is_on_floor() :
 			direction.y = -direction.y
@@ -48,6 +49,7 @@ func _physics_process(delta: float) -> void:
 		if is_on_wall():
 			direction.x = -direction.x
 	else:
+		visual.play("Idle")
 		velocity = Vector2.ZERO
 		global_position = get_global_mouse_position()
 		
@@ -98,6 +100,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			Globals.dragging = null
 			if block_detector.has_overlapping_areas() and block_detector.get_overlapping_areas()[0] is BlockArea:
 				is_in_block = true
+				# Código de detecção de tipo de bloco aqui
 				
 				
 

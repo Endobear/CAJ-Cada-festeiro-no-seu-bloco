@@ -19,8 +19,8 @@ func _ready() -> void:
 		color_rect = ColorRect.new()
 		add_child(color_rect)
 	color_rect.set_anchors_preset(Control.PRESET_CENTER)
-	color_rect.position = Vector2(-20,-20)
-	color_rect.size = Vector2(40,40)
+	color_rect.position = Vector2(-2,-3)
+	color_rect.size = Vector2(4,8)
 	color_rect.mouse_filter = Control.MOUSE_FILTER_PASS
 	last_position = global_position
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cf2jr3jhy2kqc"]
+[gd_scene load_steps=12 format=3 uid="uid://cf2jr3jhy2kqc"]
 
 [ext_resource type="Script" uid="uid://c5plpxwyuytn4" path="res://Script/level.gd" id="1_tumq0"]
 [ext_resource type="Script" uid="uid://ch8b3titi6qjq" path="res://Script/character_spawn.gd" id="2_k5f4k"]
@@ -8,10 +8,24 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k5f4k"]
 
+[sub_resource type="Resource" id="Resource_81xng"]
+script = ExtResource("3_6phgx")
+name = "mamamia"
+cor = Color(1, 1, 1, 1)
+cabelos_chapeus = Array[SpriteFrames]([])
+metadata/_custom_type_script = "uid://bvixhcrxsdm2v"
+
+[sub_resource type="Resource" id="Resource_wqkje"]
+script = ExtResource("3_6phgx")
+name = "uga"
+cor = Color(1, 0.215686, 1, 1)
+cabelos_chapeus = Array[SpriteFrames]([])
+metadata/_custom_type_script = "uid://bvixhcrxsdm2v"
+
 [sub_resource type="Resource" id="Resource_0f350"]
 script = ExtResource("3_6phgx")
 name = "mamamia"
-cor = Color(0.479716, 0.00299989, 0.947176, 1)
+cor = Color(0.698082, 0.416973, 0.759998, 1)
 cabelos_chapeus = Array[SpriteFrames]([])
 metadata/_custom_type_script = "uid://bvixhcrxsdm2v"
 
@@ -21,16 +35,14 @@ size = Vector2(187.655, 90.285)
 [sub_resource type="Resource" id="Resource_8c0lf"]
 script = ExtResource("3_6phgx")
 name = "mamamia"
-cor = Color(0.3946, 0.694676, 5.77569e-07, 1)
+cor = Color(0.759576, 0.559922, 0.26138, 1)
 cabelos_chapeus = Array[SpriteFrames]([])
 metadata/_custom_type_script = "uid://bvixhcrxsdm2v"
 
 [node name="Level" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_tumq0")
 
 [node name="MapaRascunho" type="Sprite2D" parent="."]
-z_index = -2
 texture_filter = 1
 position = Vector2(320, 180)
 texture = ExtResource("2_wqkje")
@@ -41,11 +53,12 @@ collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_k5f4k")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(703, -28, 704, 427, -54, 424, -39, 24, 0, 24, 1, 344, 529, 344, 531, 360, 639, 359, 637, 0, 531, 0, 530, 20, -40, 23, -40, -24)
+polygon = PackedVector2Array(660, -25, 704, 427, -54, 424, -39, 24, 0, 24, 1, 344, 529, 344, 531, 360, 639, 359, 637, 0, 531, 0, 530, 20, -40, 23, -40, -24)
 
 [node name="CharacterSpawn" type="Marker2D" parent="."]
 position = Vector2(139, 126)
 script = ExtResource("2_k5f4k")
+blocks = Array[ExtResource("3_6phgx")]([SubResource("Resource_81xng"), SubResource("Resource_wqkje")])
 
 [node name="Button" type="Button" parent="."]
 offset_left = 478.0
@@ -55,18 +68,17 @@ offset_bottom = 278.0
 text = "Spawn Thing"
 
 [node name="LevelBlocks" type="Node2D" parent="."]
-z_index = -1
 
 [node name="Block2" parent="LevelBlocks" instance=ExtResource("4_81xng")]
 position = Vector2(120, 262)
 characteristics = SubResource("Resource_0f350")
-debug_color = Color(0.479716, 0.00299989, 0.947176, 1)
+debug_color = Color(0.698082, 0.416973, 0.759998, 1)
 shape = SubResource("RectangleShape2D_wqkje")
 
 [node name="Block" parent="LevelBlocks" instance=ExtResource("4_81xng")]
 position = Vector2(350, 137)
 characteristics = SubResource("Resource_8c0lf")
-debug_color = Color(0.3946, 0.694676, 5.77569e-07, 1)
+debug_color = Color(0.759576, 0.559922, 0.26138, 1)
 shape = SubResource("RectangleShape2D_wqkje")
 
 [connection signal="button_up" from="Button" to="CharacterSpawn" method="_on_button_button_up"]

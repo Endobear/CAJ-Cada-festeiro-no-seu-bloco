@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dluoaywcjlvox"
-path="res://.godot/imported/Mapa_rascunho.png-ed8596736b69df42d8eae0cdd2726130.ctex"
+uid="uid://d3cayc00sbqo2"
+path="res://.godot/imported/lixeira_fechada.png-9afe6d8ad236faf6ee17684e1e6c5898.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Mapa_rascunho.png"
-dest_files=["res://.godot/imported/Mapa_rascunho.png-ed8596736b69df42d8eae0cdd2726130.ctex"]
+source_file="res://Assets/Sprites/Props/lixeira_fechada.png"
+dest_files=["res://.godot/imported/lixeira_fechada.png-9afe6d8ad236faf6ee17684e1e6c5898.ctex"]
 
 [params]
 
