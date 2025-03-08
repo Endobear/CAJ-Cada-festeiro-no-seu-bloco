@@ -38,7 +38,7 @@ slim_body_sprites = Array[SpriteFrames]([ExtResource("13_6y3s5")])
 slim_legs_sprites = Array[SpriteFrames]([])
 fat_head_sprites = Array[SpriteFrames]([])
 fat_body_sprites = Array[SpriteFrames]([ExtResource("5_gf56v")])
-fat_leg_sprites = Array[SpriteFrames]([])
+fat_legs_sprites = Array[SpriteFrames]([])
 metadata/_custom_type_script = "uid://bvixhcrxsdm2v"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqkje"]
@@ -55,7 +55,7 @@ slim_body_sprites = Array[SpriteFrames]([ExtResource("13_6y3s5")])
 slim_legs_sprites = Array[SpriteFrames]([])
 fat_head_sprites = Array[SpriteFrames]([])
 fat_body_sprites = Array[SpriteFrames]([ExtResource("5_gf56v")])
-fat_leg_sprites = Array[SpriteFrames]([])
+fat_legs_sprites = Array[SpriteFrames]([])
 metadata/_custom_type_script = "uid://bvixhcrxsdm2v"
 
 [node name="Level" type="Node2D"]

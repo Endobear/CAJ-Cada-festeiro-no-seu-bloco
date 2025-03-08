@@ -25,4 +25,4 @@ extends Resource
 # Estilos de cabelo e/ou chapeus que podem ser usados pelos personagens
 @export var fat_head_sprites : Array[SpriteFrames]
 @export var fat_body_sprites : Array[SpriteFrames]
-@export var fat_leg_sprites : Array[SpriteFrames]
+@export var fat_legs_sprites : Array[SpriteFrames]
