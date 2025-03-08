@@ -1,0 +1,141 @@
+[gd_resource type="SpriteFrames" load_steps=21 format=3 uid="uid://bvnna0rk2tulq"]
+
+[ext_resource type="Texture2D" uid="uid://dl8qlrp3gfvpk" path="res://Assets/Sprites/Characters/Animations/Dance2SpriteSheet.png" id="1_bmve4"]
+[ext_resource type="Texture2D" uid="uid://03vr4gqhj1of" path="res://Assets/Sprites/Characters/Animations/Grabbed2SpriteSheet.png" id="2_t3ss5"]
+[ext_resource type="Texture2D" uid="uid://ddntysstd4hcd" path="res://Assets/Sprites/Characters/Animations/Idle2SpriteSheet.png" id="3_xa8re"]
+[ext_resource type="Texture2D" uid="uid://cmxk4nbsy0bjr" path="res://Assets/Sprites/Characters/Animations/SpriteSheetWalk2.png" id="4_jktsg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3ss5"]
+atlas = ExtResource("1_bmve4")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa8re"]
+atlas = ExtResource("1_bmve4")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jktsg"]
+atlas = ExtResource("1_bmve4")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca0o4"]
+atlas = ExtResource("1_bmve4")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26w8s"]
+atlas = ExtResource("2_t3ss5")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1li5"]
+atlas = ExtResource("2_t3ss5")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q70vj"]
+atlas = ExtResource("2_t3ss5")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy01f"]
+atlas = ExtResource("2_t3ss5")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxkwb"]
+atlas = ExtResource("3_xa8re")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8djcq"]
+atlas = ExtResource("3_xa8re")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r18yh"]
+atlas = ExtResource("3_xa8re")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifjko"]
+atlas = ExtResource("3_xa8re")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70huv"]
+atlas = ExtResource("4_jktsg")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kmvp"]
+atlas = ExtResource("4_jktsg")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1ynf"]
+atlas = ExtResource("4_jktsg")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p22t6"]
+atlas = ExtResource("4_jktsg")
+region = Rect2(48, 0, 16, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3ss5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa8re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jktsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca0o4")
+}],
+"loop": true,
+"name": &"Dancing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26w8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1li5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q70vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy01f")
+}],
+"loop": true,
+"name": &"Grabbed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxkwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8djcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r18yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifjko")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70huv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kmvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1ynf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p22t6")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]

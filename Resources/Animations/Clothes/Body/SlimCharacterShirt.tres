@@ -1,0 +1,141 @@
+[gd_resource type="SpriteFrames" load_steps=21 format=3 uid="uid://wxu3trojrtac"]
+
+[ext_resource type="Texture2D" uid="uid://wy1esc6c6py7" path="res://Assets/Sprites/Characters/Animations/Roupas/Body/SlimBodyDancingShirt.png" id="1_ty2it"]
+[ext_resource type="Texture2D" uid="uid://cuwpp3m3k4wfj" path="res://Assets/Sprites/Characters/Animations/Roupas/Body/SlimBodyGrabbedShirt.png" id="2_ty2it"]
+[ext_resource type="Texture2D" uid="uid://8mb04cvxx8ye" path="res://Assets/Sprites/Characters/Animations/Roupas/Body/SlimBodyIdleShirt.png" id="3_lwt3f"]
+[ext_resource type="Texture2D" uid="uid://ddv01oaxkr1cb" path="res://Assets/Sprites/Characters/Animations/Roupas/Body/SlimBodyWalkShirt.png" id="4_m1wp3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwt3f"]
+atlas = ExtResource("1_ty2it")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm14q"]
+atlas = ExtResource("1_ty2it")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p7te"]
+atlas = ExtResource("1_ty2it")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn78a"]
+atlas = ExtResource("1_ty2it")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1wp3"]
+atlas = ExtResource("2_ty2it")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5ylj"]
+atlas = ExtResource("2_ty2it")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0bge"]
+atlas = ExtResource("2_ty2it")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iej28"]
+atlas = ExtResource("2_ty2it")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d85xa"]
+atlas = ExtResource("3_lwt3f")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvesq"]
+atlas = ExtResource("3_lwt3f")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ife5u"]
+atlas = ExtResource("3_lwt3f")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mleeh"]
+atlas = ExtResource("3_lwt3f")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfec5"]
+atlas = ExtResource("4_m1wp3")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsjmn"]
+atlas = ExtResource("4_m1wp3")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usp0m"]
+atlas = ExtResource("4_m1wp3")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uas7"]
+atlas = ExtResource("4_m1wp3")
+region = Rect2(48, 0, 16, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwt3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm14q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p7te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn78a")
+}],
+"loop": true,
+"name": &"Dancing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1wp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5ylj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0bge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iej28")
+}],
+"loop": true,
+"name": &"Grabbed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d85xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvesq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ife5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mleeh")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfec5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsjmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usp0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uas7")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]

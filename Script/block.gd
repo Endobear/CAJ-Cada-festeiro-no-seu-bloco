@@ -2,7 +2,9 @@
 class_name BlockArea
 extends Area2D
 
-const BANDEIRA_BRANCO_MASTRO = preload("res://Assets/Sprites/Props/Blocos/Bandeira_branco_mastro.png")
+const BANNER = preload("res://Assets/Sprites/Props/Blocos/banner.png")
+const MASTRO = preload("res://Assets/Sprites/Props/Blocos/mstro.png")
+
 
 @export var characteristics : Blocks
 
@@ -47,13 +49,22 @@ func _ready():
 			characteristics.props.erase(prop)
 			prop_spawn(prop)
 	
+	
+	var mastro = Sprite2D.new()
+	add_child(mastro)
+	mastro.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	mastro.texture = MASTRO
+	mastro.self_modulate = characteristics.cor
+	mastro.position.x = shape.get_rect().position.x + mastro.texture.get_width()
+	mastro.position.y = shape.get_rect().position.y
+	
+	
 	var banner = Sprite2D.new()
-	add_child(banner)
+	mastro.add_child(banner)
 	banner.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	banner.texture = BANDEIRA_BRANCO_MASTRO
+	banner.texture = BANNER
 	banner.self_modulate = characteristics.cor
-	banner.position.x = shape.get_rect().position.x + banner.texture.get_width()
-	banner.position.y = shape.get_rect().position.y
+	banner.z_index = 2
 	
 	var simbol = Sprite2D.new()
 	banner.add_child(simbol)

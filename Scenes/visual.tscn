@@ -1,132 +1,18 @@
-[gd_scene load_steps=20 format=3 uid="uid://ct3i2hcnw5nux"]
+[gd_scene load_steps=4 format=3 uid="uid://ct3i2hcnw5nux"]
 
 [ext_resource type="Script" uid="uid://dphbmmba15l8p" path="res://Script/visual.gd" id="1_32ndk"]
-[ext_resource type="Texture2D" uid="uid://bo6ueju84k0yb" path="res://Assets/Sprites/Characters/Template1.png" id="1_hftnc"]
-[ext_resource type="Texture2D" uid="uid://ddorbshr0u0xd" path="res://Assets/Sprites/Characters/Animations/Grabbed1SpriteSheet.png" id="2_bfq6u"]
-[ext_resource type="Texture2D" uid="uid://qm2oak2vnf7a" path="res://Assets/Sprites/Characters/Animations/SpriteSheetWalk1.png" id="2_yv1uo"]
-[ext_resource type="Texture2D" uid="uid://edgiw2yj2iab" path="res://Assets/Sprites/Characters/Animations/Idle1SpriteSheet.png" id="3_24c43"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yv1uo"]
-atlas = ExtResource("1_hftnc")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ybv5w"]
-atlas = ExtResource("2_bfq6u")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_psn65"]
-atlas = ExtResource("2_bfq6u")
-region = Rect2(16, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_26w8s"]
-atlas = ExtResource("2_bfq6u")
-region = Rect2(32, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k1li5"]
-atlas = ExtResource("2_bfq6u")
-region = Rect2(48, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q70vj"]
-atlas = ExtResource("3_24c43")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hy01f"]
-atlas = ExtResource("3_24c43")
-region = Rect2(16, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pxkwb"]
-atlas = ExtResource("3_24c43")
-region = Rect2(32, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8djcq"]
-atlas = ExtResource("3_24c43")
-region = Rect2(48, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j8qro"]
-atlas = ExtResource("2_yv1uo")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bfq6u"]
-atlas = ExtResource("2_yv1uo")
-region = Rect2(16, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_24c43"]
-atlas = ExtResource("2_yv1uo")
-region = Rect2(32, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_btcyh"]
-atlas = ExtResource("2_yv1uo")
-region = Rect2(48, 0, 16, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_j8qro"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yv1uo")
-}],
-"loop": true,
-"name": &"Dancing",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ybv5w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_psn65")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_26w8s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k1li5")
-}],
-"loop": true,
-"name": &"Grabbed",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q70vj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hy01f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pxkwb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8djcq")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j8qro")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bfq6u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_24c43")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_btcyh")
-}],
-"loop": true,
-"name": &"Walking",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://dldah0wg32g41" path="res://Resources/Animations/SlimCharacter.tres" id="1_hftnc"]
+[ext_resource type="SpriteFrames" uid="uid://wxu3trojrtac" path="res://Resources/Animations/Clothes/Body/SlimCharacterShirt.tres" id="3_yv1uo"]
 
 [node name="Visual" type="AnimatedSprite2D"]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_j8qro")
-animation = &"Dancing"
+sprite_frames = ExtResource("1_hftnc")
+animation = &"Idle"
+autoplay = "Idle"
 script = ExtResource("1_32ndk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -140,3 +26,18 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 1
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("3_yv1uo")
+animation = &"Dancing"
+autoplay = "Idle"
+
+[node name="Head" type="AnimatedSprite2D" parent="."]
+animation = &"Dancing"
+autoplay = "Idle"
+
+[node name="Legs" type="AnimatedSprite2D" parent="."]
+animation = &"Dancing"
+autoplay = "Idle"
+
+[connection signal="animation_changed" from="." to="." method="_on_animation_changed"]

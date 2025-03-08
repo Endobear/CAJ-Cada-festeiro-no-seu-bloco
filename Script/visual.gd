@@ -1,6 +1,10 @@
 class_name CharacterVisual
 extends AnimatedSprite2D
 
+@onready var body: AnimatedSprite2D = $Body
+@onready var head: AnimatedSprite2D = $Head
+@onready var legs: AnimatedSprite2D = $Legs
+
 
 
 @onready var color_rect: ColorRect = $ColorRect
@@ -12,7 +16,7 @@ extends AnimatedSprite2D
 var last_position := Vector2.ZERO
 var displacement: float = 0.0 
 var velocity := Vector2.ZERO
-var ocilator_velocity := 0.0
+var ocilator_velocity : float = 0.0
 
 func _ready() -> void:
 	if !color_rect:
@@ -50,4 +54,27 @@ func _process(delta: float) -> void:
 				tween.tween_property(self,"rotation",0,0.1)
 				
 		global_position = parent.global_position
-	
+		
+		
+		
+		body.flip_h = flip_h
+		body.modulate = color_rect.color
+		
+		head.flip_h = flip_h
+		head.modulate = color_rect.color
+		
+		legs.flip_h = flip_h
+		legs.modulate = color_rect.color
+
+
+func _on_animation_changed() -> void:
+	if body.sprite_frames:
+		body.play(animation)
+		
+		
+	if head.sprite_frames:
+		head.play(animation)
+		
+		
+	if legs.sprite_frames:
+		legs.play(animation)

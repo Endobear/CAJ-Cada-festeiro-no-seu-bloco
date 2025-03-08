@@ -8,9 +8,21 @@ extends Resource
 # Cor que será exibida na camisa/acessórios das pessoas e também no frame do bloco
 @export var cor : Color = Color.WHITE
 
-# Estilos de cabelo e/ou chapeus que podem ser usados pelos personagens
-@export var cabelos_chapeus : Array[SpriteFrames]
-
+# Props para spawnar dentro do bloco
 @export var props : Array[Texture2D]
 
+# Simbolo do bloco
 @export var simbol : Texture2D
+
+@export_group("Slim body sprites")
+# Estilos de cabelo e/ou chapeus que podem ser usados pelos personagens
+@export var slim_head_sprites : Array[SpriteFrames]
+@export var slim_body_sprites : Array[SpriteFrames]
+@export var slim_legs_sprites : Array[SpriteFrames]
+
+
+@export_group("Fat body sprites")
+# Estilos de cabelo e/ou chapeus que podem ser usados pelos personagens
+@export var fat_head_sprites : Array[SpriteFrames]
+@export var fat_body_sprites : Array[SpriteFrames]
+@export var fat_leg_sprites : Array[SpriteFrames]
