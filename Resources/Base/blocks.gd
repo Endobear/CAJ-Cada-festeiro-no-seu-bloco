@@ -10,3 +10,7 @@ extends Resource
 
 # Estilos de cabelo e/ou chapeus que podem ser usados pelos personagens
 @export var cabelos_chapeus : Array[SpriteFrames]
+
+@export var props : Array[Texture2D]
+
+@export var simbol : Texture2D

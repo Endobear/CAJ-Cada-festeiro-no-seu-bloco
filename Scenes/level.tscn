@@ -1,10 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://cf2jr3jhy2kqc"]
+[gd_scene load_steps=27 format=3 uid="uid://cf2jr3jhy2kqc"]
 
 [ext_resource type="Script" uid="uid://c5plpxwyuytn4" path="res://Script/level.gd" id="1_tumq0"]
+[ext_resource type="Texture2D" uid="uid://53txav3ftwg5" path="res://Assets/Sprites/Maps/Cenario_com_marcacoes_novo.png" id="2_3a44l"]
 [ext_resource type="Script" uid="uid://ch8b3titi6qjq" path="res://Script/character_spawn.gd" id="2_k5f4k"]
-[ext_resource type="Texture2D" uid="uid://djtbnfoo2p60i" path="res://Assets/Sprites/Maps/Cenario_com_marcacoes.png" id="2_wqkje"]
 [ext_resource type="Script" uid="uid://bvixhcrxsdm2v" path="res://Resources/Base/blocks.gd" id="3_6phgx"]
 [ext_resource type="PackedScene" uid="uid://bhl5ok2vc8c4n" path="res://Scenes/Block.tscn" id="4_81xng"]
+[ext_resource type="Texture2D" uid="uid://dt38ilwsugxbt" path="res://Assets/Sprites/Props/Blocos/Pscina/Areia.png" id="5_ha31o"]
+[ext_resource type="PackedScene" uid="uid://cg2h8tq0ddb73" path="res://Scenes/Props/Lixeira.tscn" id="6_0f350"]
+[ext_resource type="Texture2D" uid="uid://ds2hqy1pyvjol" path="res://Assets/Sprites/Props/Blocos/Pscina/cadeira_de_praia_azul1.png" id="6_3a44l"]
+[ext_resource type="Texture2D" uid="uid://b2cgo55y8l2j" path="res://Assets/Sprites/Props/Blocos/Fantasia/araras_fantasias1.png" id="6_bvt00"]
+[ext_resource type="Texture2D" uid="uid://cnn1oyci638np" path="res://Assets/Sprites/Props/Blocos/Pscina/Piscina_1.0.png" id="6_pa6b8"]
+[ext_resource type="Texture2D" uid="uid://bsw2ky6x0g01a" path="res://Assets/Sprites/Props/Blocos/Pscina/cadeira_de_praia_verde1.png" id="7_crh0w"]
+[ext_resource type="Texture2D" uid="uid://bv82c1qks3o0b" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão4.png" id="7_oqgf2"]
+[ext_resource type="Texture2D" uid="uid://dq0c5gadyg67a" path="res://Assets/Sprites/Props/Blocos/Pscina/casrelo_de_areia.png" id="8_0cmrb"]
+[ext_resource type="Texture2D" uid="uid://bh8m0cvuoxr4y" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão5.png" id="8_qxfql"]
+[ext_resource type="Texture2D" uid="uid://01b5vgyrsueu" path="res://Assets/Sprites/Props/Blocos/Fantasia/araras_fantasias2.png" id="10_vofx3"]
+[ext_resource type="Texture2D" uid="uid://7k4010d4jmq1" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão1.png" id="11_00k4y"]
+[ext_resource type="Texture2D" uid="uid://cdnc2r3rml6ba" path="res://Assets/Sprites/Props/Blocos/simbolo_bola.png" id="11_pnhnk"]
+[ext_resource type="Texture2D" uid="uid://byp2pkfg4aaua" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão2.png" id="12_3a44l"]
+[ext_resource type="Texture2D" uid="uid://b6i5rawewof20" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão3.png" id="13_0cmrb"]
+[ext_resource type="Texture2D" uid="uid://cbxkmd82oap38" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão6.png" id="16_pnhnk"]
+[ext_resource type="Texture2D" uid="uid://ydc6to5uw0iy" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão7.png" id="17_24uko"]
+[ext_resource type="Texture2D" uid="uid://diukucrf0detq" path="res://Assets/Sprites/Props/Blocos/simbolo_fantasias.png" id="21_pnhnk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k5f4k"]
 
@@ -13,6 +30,8 @@ script = ExtResource("3_6phgx")
 name = "mamamia"
 cor = Color(0.479716, 0.00299989, 0.947176, 1)
 cabelos_chapeus = Array[SpriteFrames]([])
+props = Array[Texture2D]([ExtResource("5_ha31o"), ExtResource("6_3a44l"), ExtResource("7_crh0w"), ExtResource("8_0cmrb"), ExtResource("6_pa6b8")])
+simbol = ExtResource("11_pnhnk")
 metadata/_custom_type_script = "uid://bvixhcrxsdm2v"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqkje"]
@@ -20,9 +39,11 @@ size = Vector2(187.655, 90.285)
 
 [sub_resource type="Resource" id="Resource_8c0lf"]
 script = ExtResource("3_6phgx")
-name = "mamamia"
+name = "Carnaval"
 cor = Color(0.3946, 0.694676, 5.77569e-07, 1)
 cabelos_chapeus = Array[SpriteFrames]([])
+props = Array[Texture2D]([ExtResource("6_bvt00"), ExtResource("10_vofx3"), ExtResource("11_00k4y"), ExtResource("12_3a44l"), ExtResource("13_0cmrb"), ExtResource("7_oqgf2"), ExtResource("8_qxfql"), ExtResource("16_pnhnk"), ExtResource("17_24uko")])
+simbol = ExtResource("21_pnhnk")
 metadata/_custom_type_script = "uid://bvixhcrxsdm2v"
 
 [node name="Level" type="Node2D"]
@@ -33,7 +54,7 @@ script = ExtResource("1_tumq0")
 z_index = -2
 texture_filter = 1
 position = Vector2(320, 180)
-texture = ExtResource("2_wqkje")
+texture = ExtResource("2_3a44l")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -44,6 +65,7 @@ physics_material_override = SubResource("PhysicsMaterial_k5f4k")
 polygon = PackedVector2Array(703, -28, 704, 427, -54, 424, -39, 24, 0, 24, 1, 344, 529, 344, 531, 360, 639, 359, 637, 0, 531, 0, 530, 20, -40, 23, -40, -24)
 
 [node name="CharacterSpawn" type="Marker2D" parent="."]
+y_sort_enabled = true
 position = Vector2(139, 126)
 script = ExtResource("2_k5f4k")
 
@@ -68,5 +90,8 @@ position = Vector2(350, 137)
 characteristics = SubResource("Resource_8c0lf")
 debug_color = Color(0.3946, 0.694676, 5.77569e-07, 1)
 shape = SubResource("RectangleShape2D_wqkje")
+
+[node name="Lixeira" parent="." instance=ExtResource("6_0f350")]
+position = Vector2(15, 36)
 
 [connection signal="button_up" from="Button" to="CharacterSpawn" method="_on_button_button_up"]

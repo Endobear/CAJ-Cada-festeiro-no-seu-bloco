@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cl3s62w41bu3n" path="res://Script/block.gd" id="1_ovn4m"]
 
 [node name="Block" type="Area2D"]
+y_sort_enabled = true
 collision_layer = 4
 script = ExtResource("1_ovn4m")
 

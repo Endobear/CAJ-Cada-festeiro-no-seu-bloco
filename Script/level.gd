@@ -15,5 +15,8 @@ func _ready():
 	if level_blocks.get_child_count() > 0:
 		Globals.populateBlocks(level_blocks.get_children())
 		for b in Globals.blocos:
-			character_spawn.blocks.append(b.characteristics)
+			if b:
+				character_spawn.blocks.append(b.characteristics)
+			
+	Globals.start_game(self)
 	

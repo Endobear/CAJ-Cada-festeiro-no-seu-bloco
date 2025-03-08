@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnn1oyci638np"
-path="res://.godot/imported/Piscina_1.0.png-5b9d868785d9080df2d0c804c5bdfb2a.ctex"
+uid="uid://edgiw2yj2iab"
+path="res://.godot/imported/Idle1SpriteSheet.png-d373de9630e7b169d85d11bb27719781.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Props/Blocos/Piscina_1.0.png"
-dest_files=["res://.godot/imported/Piscina_1.0.png-5b9d868785d9080df2d0c804c5bdfb2a.ctex"]
+source_file="res://Assets/Sprites/Characters/Animations/Idle1SpriteSheet.png"
+dest_files=["res://.godot/imported/Idle1SpriteSheet.png-d373de9630e7b169d85d11bb27719781.ctex"]
 
 [params]
 

@@ -43,13 +43,16 @@ func _physics_process(delta: float) -> void:
 			
 			visual.play("Walking")
 		
-		if is_on_ceiling() || is_on_floor() :
-			direction.y = -direction.y
-		
-		if is_on_wall():
-			direction.x = -direction.x
+			if is_on_ceiling() || is_on_floor() :
+				direction.y = -direction.y
+			
+			if is_on_wall():
+				direction.x = -direction.x
+		else:
+			visual.play("Idle")
+			
 	else:
-		visual.play("Idle")
+		visual.play("Grabbed")
 		velocity = Vector2.ZERO
 		global_position = get_global_mouse_position()
 		
@@ -101,8 +104,17 @@ func _unhandled_input(event: InputEvent) -> void:
 			if block_detector.has_overlapping_areas() and block_detector.get_overlapping_areas()[0] is BlockArea:
 				is_in_block = true
 				# Código de detecção de tipo de bloco aqui
+				var block = block_detector.get_overlapping_areas()[0]
 				
-				
+				if block.characteristics  == characteristics.block:
+					block.ponto()
+				else:
+					block.strike()
+					end_life()
+					
+
+func end_life():
+	queue_free()
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if !is_in_block:
@@ -110,4 +122,3 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			if event.is_pressed() and !is_dragged and !Globals.dragging:
 					is_dragged = true
 					Globals.dragging = self
-				
