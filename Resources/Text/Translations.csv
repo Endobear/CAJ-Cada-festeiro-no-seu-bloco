@@ -1,0 +1,27 @@
+keys,en,pt
+PLAY_BUTTON,Play,Jogar
+HOW_BUTTON,How to play,Como jogar
+HOW_TEXT,"In ""Cada festeiro no seu bloco"", you must organize the block party.
+To do this, you need to take each partygoer and guide them to the right block. You earn 1 point for each correctly placed partygoer!
+People wearing masks and costumes go to the Costume Block.
+People holding a can in their hand go to the Beer Block.
+People in swimwear or with a float go to the Beach Block.
+People wearing a team jersey and cap go to the Sports Fans Block.
+Avoid placing people in the wrong block! Otherwise, you'll get a strike!
+And don’t take too long, because if a partygoer waits too much, they’ll leave the party, and you’ll receive a strike!
+Be careful with troublemakers who are only here to ruin the fun. These people are not welcome at our party and should be sent to the trash! If you take too long, you’ll also receive a strike!","Em cada festeiro no seu bloco, você deve organizar a festa de bloquinhos.
+Para isso você deve pegar cada festeiro e levar eles até seu bloco certo. Com isso você ganha 1 ponto por festeiro!
+Pessoal de máscara e fantasia vai no bloco das fantasias
+Pessoal com latinha na mão vai no bloco da cerveja
+Pessoal de roupa de banho ou boia vai pro bloco da praia
+E o pessoal de camisa e boné de time vai pro bloco dos torcedores de coração
+Evite colocar pessoas no lugar errado! Senão você recebe um erro!
+E também vê se não dorme no ponto, que se demorar demais o festeiro sai da festa e você recebe um erro!
+Tome cuidado com os arruaceiros que vêm só pra zoar sua diversão, essa galera não é bem-vinda na nossa festa e deve ser mandada pra lixeira! Caso demorar demais, também receberá um erro!"
+OPTIONS_BUTTON,Options,Opções
+BACK_BUTTON,Back,Voltar
+POINTS_TEXT,Points:,Pontuação:
+TIME_TEXT,Time:,Tempo:
+GAME_OVER_TEXT,GAME OVER,FIM DE JOGO
+RESTART_TEXT,Restart,Recomeçar
+BACK_TO_MENU_TEXT,Main menu,Menu Principal

@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("4_574ni")
-active = false
+active = true
 name = "Cerveja"
 cor = Color(1, 0.933333, 0, 1)
 props = Array[Texture2D]([ExtResource("2_xtdi4")])

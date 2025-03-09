@@ -2,11 +2,17 @@ class_name Character
 extends CharacterBody2D
 
 const VISUAL = preload("res://Scenes/visual.tscn")
-const FAT_CHARACTER_FRAMES = preload("res://Resources/Animations/FatCharacter.tres")
-const SLIM_CHARACTER_FRAMES = preload("res://Resources/Animations/SlimCharacter.tres")
+const FAT_CHARACTER_FRAMES = [preload("res://Resources/Animations/FatCharacterLight.tres"), preload("res://Resources/Animations/FatCharacterDark.tres"), preload("res://Resources/Animations/FatCharacterTan.tres")]
+const SLIM_CHARACTER_FRAMES = [preload("res://Resources/Animations/SlimCharacterDark.tres"), preload("res://Resources/Animations/SlimCharacterLight.tres"), preload("res://Resources/Animations/SlimCharacterTan.tres")]
+
+
+
+
 
 @export var characteristics : Charactersistics
+
 @onready var block_detector: Area2D = $BlockDetector
+@onready var timer: Timer = $Timer
 
 var visual: CharacterVisual
 
@@ -28,7 +34,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	
 	if !direction:
-		direction = Vector2.RIGHT.rotated(rad_to_deg(randf_range(0,360)))
+		direction = Vector2.LEFT.rotated(deg_to_rad(randf_range(-30,30)))
 	
 	visual.flip_h = true if direction.x < 0 else false
 	
@@ -36,6 +42,13 @@ func _physics_process(delta: float) -> void:
 		#print("error")
 	#if (characteristics.body == Charactersistics.BODY_TYPE.FAT and visual.sprite_frames.resource_path == SLIM_CHARACTER_FRAMES.resource_path):
 		#print("error")
+	
+	
+	if !is_in_block and timer.time_left <= timer.wait_time/2:
+		if int(timer.time_left) % 2 == 0:
+			modulate = Color.from_rgba8(255,remap(timer.time_left,10,0,255,0),remap(timer.time_left,10,0,255,0))
+		else:
+			modulate = Color.WHITE
 	
 	if !is_dragged:
 		if !is_in_block:
@@ -52,7 +65,7 @@ func _physics_process(delta: float) -> void:
 					
 					
 					var angle_rotation = randf_range(-30,30)
-					print(angle_rotation)
+					
 					direction = direction.rotated(deg_to_rad(angle_rotation))
 					
 					
@@ -126,10 +139,13 @@ func generate_visuals():
 		visual = VISUAL.instantiate()
 		add_child(visual)
 		
-		
+	var easter_egg = randi_range(0,100) < 5
+	
 	match characteristics.body:
 		Charactersistics.BODY_TYPE.SLIM:
-			visual.sprite_frames = SLIM_CHARACTER_FRAMES
+			visual.sprite_frames = SLIM_CHARACTER_FRAMES.pick_random()
+			if easter_egg:
+				visual.sprite_frames = preload("res://Resources/Animations/SlimCharacterTemplate.tres")
 			
 			if characteristics.block.slim_body_sprites:
 				visual.body.sprite_frames = characteristics.block.slim_body_sprites.pick_random()
@@ -141,7 +157,10 @@ func generate_visuals():
 				visual.legs.sprite_frames = characteristics.block.slim_legs_sprites.pick_random()
 			
 		Charactersistics.BODY_TYPE.FAT:
-			visual.sprite_frames = FAT_CHARACTER_FRAMES
+			visual.sprite_frames = FAT_CHARACTER_FRAMES.pick_random()
+			
+			if easter_egg:
+				visual.sprite_frames = preload("res://Resources/Animations/FatCharacterTemplate.tres")
 			
 			if characteristics.block.fat_body_sprites:
 				visual.body.sprite_frames = characteristics.block.fat_body_sprites.pick_random()
@@ -173,6 +192,7 @@ func _unhandled_input(event: InputEvent) -> void:
 						if block.characteristics  == characteristics.block:
 							Globals.add_point()
 							visual.play(["Idle","Dancing"].pick_random())
+							modulate = Color.WHITE
 						else:
 							Globals.add_strike(global_position)
 							end_life()
@@ -196,3 +216,10 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			if event.is_pressed() and !is_dragged and !Globals.dragging:
 					is_dragged = true
 					Globals.dragging = self
+
+
+func _on_timer_timeout() -> void:
+	if Globals.is_playing and not is_in_block:
+		Globals.add_strike(global_position)
+		end_life()
+		

@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://cf2jr3jhy2kqc"]
+
+[ext_resource type="Script" uid="uid://c5plpxwyuytn4" path="res://Script/level.gd" id="1_tumq0"]
+[ext_resource type="Texture2D" uid="uid://53txav3ftwg5" path="res://Assets/Sprites/Maps/Cenario_com_marcacoes_novo.png" id="2_3a44l"]
+[ext_resource type="Script" uid="uid://ch8b3titi6qjq" path="res://Script/character_spawn.gd" id="2_k5f4k"]
+[ext_resource type="PackedScene" uid="uid://bhl5ok2vc8c4n" path="res://Scenes/Block.tscn" id="4_81xng"]
+[ext_resource type="Resource" uid="uid://csemeqxic8n3m" path="res://Resources/Blocks/BlocoPraia.tres" id="5_nngtn"]
+[ext_resource type="PackedScene" uid="uid://cg2h8tq0ddb73" path="res://Scenes/Props/Lixeira.tscn" id="6_0f350"]
+[ext_resource type="Resource" uid="uid://d1d5xeko15jrv" path="res://Resources/Blocks/BlocoCerveja.tres" id="8_oqgf2"]
+[ext_resource type="Resource" uid="uid://bq4cl61ut4f5i" path="res://Resources/Blocks/BlocoCarnaval.tres" id="16_53r2q"]
+[ext_resource type="Resource" uid="uid://cu0sc6nv4nsb" path="res://Resources/Blocks/BlocoFutebol.tres" id="17_6y3s5"]
+[ext_resource type="Texture2D" uid="uid://bpf7w3qv35e47" path="res://Assets/Sprites/Props/Blocos/BRASIL-SIL-SIL.png" id="31_t205d"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k5f4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqkje"]
+size = Vector2(187.655, 90.285)
+
+[node name="Level" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_tumq0")
+
+[node name="MapaRascunho" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(320, 180)
+texture = ExtResource("2_3a44l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_k5f4k")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(678, -24, 680, 403, -43, 401, -40, 23, 0, 23, 0, 345, 530, 345, 530, 360, 639, 359, 637, 0, 531, 0, 531, 20, -40, 23, -40, -24)
+
+[node name="CharacterSpawn" type="Marker2D" parent="."]
+y_sort_enabled = true
+position = Vector2(471, 197)
+script = ExtResource("2_k5f4k")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 478.0
+offset_top = 247.0
+offset_right = 585.0
+offset_bottom = 278.0
+text = "Spawn Thing"
+
+[node name="LevelBlocks" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Block2" parent="LevelBlocks" instance=ExtResource("4_81xng")]
+position = Vector2(123, 262)
+characteristics = ExtResource("5_nngtn")
+debug_color = Color(0.479716, 0.00299989, 0.947176, 1)
+shape = SubResource("RectangleShape2D_wqkje")
+
+[node name="Block" parent="LevelBlocks" instance=ExtResource("4_81xng")]
+position = Vector2(350, 137)
+characteristics = ExtResource("16_53r2q")
+debug_color = Color(0.3946, 0.694676, 5.77569e-07, 1)
+shape = SubResource("RectangleShape2D_wqkje")
+
+[node name="Block3" parent="LevelBlocks" instance=ExtResource("4_81xng")]
+position = Vector2(123, 135)
+characteristics = ExtResource("17_6y3s5")
+debug_color = Color(0.509804, 0.890196, 1, 1)
+shape = SubResource("RectangleShape2D_wqkje")
+
+[node name="Block4" parent="LevelBlocks" instance=ExtResource("4_81xng")]
+position = Vector2(353, 261)
+characteristics = ExtResource("8_oqgf2")
+debug_color = Color(1, 0.933333, 0, 1)
+shape = SubResource("RectangleShape2D_wqkje")
+
+[node name="Lixeira" parent="." instance=ExtResource("6_0f350")]
+position = Vector2(15, 36)
+
+[node name="Brasil-sil-sil" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(393, 32)
+texture = ExtResource("31_t205d")
+
+[connection signal="button_up" from="Button" to="CharacterSpawn" method="_on_button_button_up"]

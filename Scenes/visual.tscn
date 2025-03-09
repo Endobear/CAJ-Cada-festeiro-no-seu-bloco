@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ct3i2hcnw5nux"]
 
 [ext_resource type="Script" uid="uid://dphbmmba15l8p" path="res://Script/visual.gd" id="1_32ndk"]
-[ext_resource type="SpriteFrames" uid="uid://dldah0wg32g41" path="res://Resources/Animations/SlimCharacter.tres" id="1_hftnc"]
+[ext_resource type="SpriteFrames" uid="uid://dldah0wg32g41" path="res://Resources/Animations/SlimCharacterTemplate.tres" id="1_hftnc"]
 [ext_resource type="SpriteFrames" uid="uid://wxu3trojrtac" path="res://Resources/Animations/Clothes/Body/SlimCharacterShirt.tres" id="3_yv1uo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yv1uo"]

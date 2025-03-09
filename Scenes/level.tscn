@@ -1,15 +1,191 @@
-[gd_scene load_steps=13 format=3 uid="uid://cf2jr3jhy2kqc"]
+[gd_scene load_steps=26 format=3 uid="uid://cf2jr3jhy2kqc"]
 
 [ext_resource type="Script" uid="uid://c5plpxwyuytn4" path="res://Script/level.gd" id="1_tumq0"]
 [ext_resource type="Texture2D" uid="uid://53txav3ftwg5" path="res://Assets/Sprites/Maps/Cenario_com_marcacoes_novo.png" id="2_3a44l"]
 [ext_resource type="Script" uid="uid://ch8b3titi6qjq" path="res://Script/character_spawn.gd" id="2_k5f4k"]
+[ext_resource type="Theme" uid="uid://d0hdyc7v2a57y" path="res://Resources/Text/new_theme.tres" id="3_nngtn"]
 [ext_resource type="PackedScene" uid="uid://bhl5ok2vc8c4n" path="res://Scenes/Block.tscn" id="4_81xng"]
 [ext_resource type="Resource" uid="uid://csemeqxic8n3m" path="res://Resources/Blocks/BlocoPraia.tres" id="5_nngtn"]
 [ext_resource type="PackedScene" uid="uid://cg2h8tq0ddb73" path="res://Scenes/Props/Lixeira.tscn" id="6_0f350"]
 [ext_resource type="Resource" uid="uid://d1d5xeko15jrv" path="res://Resources/Blocks/BlocoCerveja.tres" id="8_oqgf2"]
+[ext_resource type="FontFile" uid="uid://ctp46xree4vfb" path="res://Resources/Text/rainyhearts.ttf" id="11_qxfql"]
+[ext_resource type="Texture2D" uid="uid://d2g1jqjt4t56t" path="res://Assets/Sprites/Props/poste_luz.png" id="12_ha31o"]
+[ext_resource type="Texture2D" uid="uid://dhbte5stcdolc" path="res://Assets/Sprites/Props/semaforo.png" id="13_pa6b8"]
+[ext_resource type="Texture2D" uid="uid://crbqtnyeege5f" path="res://Assets/Sprites/Props/barragem.png" id="14_c7le1"]
+[ext_resource type="Texture2D" uid="uid://co5fa2gl5wf4s" path="res://Assets/Sprites/Props/cone.png" id="15_2klc5"]
+[ext_resource type="Texture2D" uid="uid://dxs5jmr6a6vj8" path="res://Assets/Sprites/Props/cone_com_seta.png" id="16_2klc5"]
 [ext_resource type="Resource" uid="uid://bq4cl61ut4f5i" path="res://Resources/Blocks/BlocoCarnaval.tres" id="16_53r2q"]
 [ext_resource type="Resource" uid="uid://cu0sc6nv4nsb" path="res://Resources/Blocks/BlocoFutebol.tres" id="17_6y3s5"]
 [ext_resource type="Texture2D" uid="uid://bpf7w3qv35e47" path="res://Assets/Sprites/Props/Blocos/BRASIL-SIL-SIL.png" id="31_t205d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ha31o"]
+font = ExtResource("11_qxfql")
+font_size = 32
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2klc5"]
+font = ExtResource("11_qxfql")
+
+[sub_resource type="Animation" id="Animation_vofx3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Control/VBoxContainer/RestartButton:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Control/VBoxContainer/MenuButton:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_nngtn"]
+resource_name = "game_over"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Control/VBoxContainer/RestartButton:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Control/VBoxContainer/MenuButton:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2klc5"]
+resource_name = "start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Control/VBoxContainer/RestartButton:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Control/VBoxContainer/MenuButton:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vofx3"]
+_data = {
+&"RESET": SubResource("Animation_vofx3"),
+&"game_over": SubResource("Animation_nngtn"),
+&"start": SubResource("Animation_2klc5")
+}
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k5f4k"]
 
@@ -19,6 +195,152 @@ size = Vector2(187.655, 90.285)
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_tumq0")
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Points" type="Label" parent="UI/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 86.0
+offset_bottom = 30.0
+label_settings = SubResource("LabelSettings_ha31o")
+
+[node name="Button" type="Button" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Spawn Thing"
+
+[node name="GameOver" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/GameOver"]
+custom_minimum_size = Vector2(208.905, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.336793
+anchor_right = 0.663207
+anchor_bottom = 1.0
+offset_left = 104.452
+offset_right = -104.453
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverText" type="Label" parent="UI/GameOver/Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_top = 61.0
+offset_right = 31.0
+offset_bottom = 76.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+text = "GAME_OVER_TEXT"
+label_settings = SubResource("LabelSettings_2klc5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointsGameOver" type="Label" parent="UI/GameOver/Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_top = 116.0
+offset_right = 31.0
+offset_bottom = 131.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+label_settings = SubResource("LabelSettings_2klc5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerGameOver" type="Label" parent="UI/GameOver/Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_top = 159.0
+offset_right = 31.0
+offset_bottom = 174.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+label_settings = SubResource("LabelSettings_2klc5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="UI/GameOver/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -86.0
+offset_right = -12.905
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GameOver/Panel/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestartButton" type="Button" parent="UI/GameOver/Panel/Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("3_nngtn")
+text = "RESTART_TEXT"
+
+[node name="MenuButton" type="Button" parent="UI/GameOver/Panel/Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("3_nngtn")
+text = "BACK_TO_MENU_TEXT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+root_node = NodePath("../GameOver")
+libraries = {
+&"": SubResource("AnimationLibrary_vofx3")
+}
+autoplay = "start"
 
 [node name="MapaRascunho" type="Sprite2D" parent="."]
 z_index = -2
@@ -32,19 +354,17 @@ collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_k5f4k")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(678, -24, 680, 403, -43, 401, -40, 23, 0, 23, 0, 345, 530, 345, 530, 360, 639, 359, 637, 0, 531, 0, 531, 20, -40, 23, -40, -24)
+polygon = PackedVector2Array(787, -136, 775, 582, -253, 595, -244, 24, 0, 23, 0, 345, 530, 345, 529, 219, 528, 191, 527, 75, 531, 20, -244, 24, -227, -143)
 
 [node name="CharacterSpawn" type="Marker2D" parent="."]
 y_sort_enabled = true
-position = Vector2(471, 197)
+position = Vector2(512, 204)
 script = ExtResource("2_k5f4k")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 478.0
-offset_top = 247.0
-offset_right = 585.0
-offset_bottom = 278.0
-text = "Spawn Thing"
+[node name="CharacterSpawnTimer" type="Timer" parent="CharacterSpawn"]
+wait_time = 2.0
+one_shot = true
+autostart = true
 
 [node name="LevelBlocks" type="Node2D" parent="."]
 z_index = -1
@@ -74,11 +394,88 @@ debug_color = Color(1, 0.933333, 0, 1)
 shape = SubResource("RectangleShape2D_wqkje")
 
 [node name="Lixeira" parent="." instance=ExtResource("6_0f350")]
-position = Vector2(15, 36)
+position = Vector2(16, 322)
 
 [node name="Brasil-sil-sil" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(393, 32)
 texture = ExtResource("31_t205d")
 
-[connection signal="button_up" from="Button" to="CharacterSpawn" method="_on_button_button_up"]
+[node name="PosteLuz" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(238, 302)
+texture = ExtResource("12_ha31o")
+
+[node name="PosteLuz2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(148, 40)
+texture = ExtResource("12_ha31o")
+
+[node name="PosteLuz3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(386, 40)
+texture = ExtResource("12_ha31o")
+
+[node name="Semaforo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(548, 41)
+texture = ExtResource("13_pa6b8")
+
+[node name="Semaforo2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(557, 317)
+texture = ExtResource("13_pa6b8")
+
+[node name="Barragem" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538, 112)
+texture = ExtResource("14_c7le1")
+
+[node name="Barragem3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538, 289)
+texture = ExtResource("14_c7le1")
+
+[node name="Barragem4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538, 239)
+texture = ExtResource("14_c7le1")
+
+[node name="Barragem2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538, 162)
+texture = ExtResource("14_c7le1")
+
+[node name="Cone" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538, 85)
+texture = ExtResource("15_2klc5")
+
+[node name="Cone2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538, 135)
+texture = ExtResource("15_2klc5")
+
+[node name="Cone3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538, 311)
+texture = ExtResource("15_2klc5")
+
+[node name="Cone4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538, 261)
+texture = ExtResource("15_2klc5")
+
+[node name="Cone5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538, 221)
+texture = ExtResource("15_2klc5")
+
+[node name="ConeComSeta" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538, 184)
+texture = ExtResource("16_2klc5")
+
+[connection signal="button_up" from="UI/Control/Button" to="CharacterSpawn" method="_on_button_button_up"]
+[connection signal="button_up" from="UI/GameOver/Panel/Control/VBoxContainer/RestartButton" to="." method="_on_restart_button_up"]
+[connection signal="timeout" from="CharacterSpawn/CharacterSpawnTimer" to="CharacterSpawn" method="_on_character_spawn_timer_timeout"]

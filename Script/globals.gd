@@ -14,6 +14,10 @@ var strikes : int = 0
 
 var spawner
 
+signal game_over
+
+var is_playing : bool = false
+
 
 func populateBlocks(blocks : Array[Node]):
 	blocos.clear()
@@ -34,18 +38,26 @@ func update_active():
 
 func start_game(level):
 	
+	update_active()
+	
 	level.character_spawn.blocks.clear()
 	
 	for b in blocos_ativos:
 		level.character_spawn.blocks.append(b.characteristics)
+	
 		
+	
 	points = 0
 	strikes = 0
-
+	is_playing = true
 
 func add_point():
 	points += 1
-	
+
+
+func restart_level():
+	get_tree().reload_current_scene()
+
 func add_strike(sprite_position: Vector2):
 	strikes += 1
 	
@@ -55,7 +67,9 @@ func add_strike(sprite_position: Vector2):
 	sprite.z_index = 5
 	
 	if strikes > 2:
-		get_tree().reload_current_scene()
+		#get_tree().reload_current_scene()
+		is_playing = false
+		game_over.emit()
 		
 func is_in_active(b : Blocks):
 	for block in blocos_ativos:

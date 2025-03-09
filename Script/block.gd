@@ -14,6 +14,7 @@ var props_spawned : Array[Sprite2D]
 @export var debug_color : Color = Color.DARK_BLUE
 
 
+
 @export var shape:Shape2D:
 	set(new_value):
 		if shape == new_value:
@@ -30,6 +31,7 @@ var props_spawned : Array[Sprite2D]
 		
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
+@onready var caixa_de_som: AnimatedSprite2D = $CaixaDeSom
 
 
 func ponto():
@@ -113,7 +115,13 @@ func spawn_banner():
 	props_spawned.append(mastro)
 	props_spawned.append(banner)
 	props_spawned.append(simbol)
-		
+	
+	caixa_de_som.flip_h = randi_range(0,1)
+	var x = randf_range(shape.get_rect().position.x + mastro.texture.get_width(), shape.get_rect().position.x+ (shape.get_rect().size.x - mastro.texture.get_width()))
+	var y = randf_range(shape.get_rect().position.y + mastro.texture.get_height(), shape.get_rect().position.y+ (shape.get_rect().size.y - mastro.texture.get_height()))
+	caixa_de_som.position = Vector2(x,y)
+	caixa_de_som.modulate = [Color.YELLOW,Color.BLUE_VIOLET,Color.ORANGE_RED,Color.WHITE].pick_random()
+	
 func prop_spawn(prop : Texture2D):
 	var sprite = Sprite2D.new()
 	add_child(sprite)
@@ -129,7 +137,10 @@ func prop_spawn(prop : Texture2D):
 
 
 func update_active_props():
+	
 	if characteristics:
+		caixa_de_som.visible = characteristics.active
+		
 		if characteristics.active:
 			spawn_props()
 			spawn_banner()
