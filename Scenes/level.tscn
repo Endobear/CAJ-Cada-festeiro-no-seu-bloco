@@ -1,62 +1,20 @@
-[gd_scene load_steps=29 format=3 uid="uid://cf2jr3jhy2kqc"]
+[gd_scene load_steps=13 format=3 uid="uid://cf2jr3jhy2kqc"]
 
 [ext_resource type="Script" uid="uid://c5plpxwyuytn4" path="res://Script/level.gd" id="1_tumq0"]
 [ext_resource type="Texture2D" uid="uid://53txav3ftwg5" path="res://Assets/Sprites/Maps/Cenario_com_marcacoes_novo.png" id="2_3a44l"]
 [ext_resource type="Script" uid="uid://ch8b3titi6qjq" path="res://Script/character_spawn.gd" id="2_k5f4k"]
-[ext_resource type="Script" uid="uid://bvixhcrxsdm2v" path="res://Resources/Base/blocks.gd" id="3_6phgx"]
 [ext_resource type="PackedScene" uid="uid://bhl5ok2vc8c4n" path="res://Scenes/Block.tscn" id="4_81xng"]
-[ext_resource type="SpriteFrames" uid="uid://bh3ase6rux3f" path="res://Resources/Animations/Clothes/Body/FatCharacterShirt.tres" id="5_gf56v"]
-[ext_resource type="Texture2D" uid="uid://dt38ilwsugxbt" path="res://Assets/Sprites/Props/Blocos/Pscina/Areia.png" id="5_ha31o"]
+[ext_resource type="Resource" uid="uid://csemeqxic8n3m" path="res://Resources/Blocks/BlocoPraia.tres" id="5_nngtn"]
 [ext_resource type="PackedScene" uid="uid://cg2h8tq0ddb73" path="res://Scenes/Props/Lixeira.tscn" id="6_0f350"]
-[ext_resource type="Texture2D" uid="uid://ds2hqy1pyvjol" path="res://Assets/Sprites/Props/Blocos/Pscina/cadeira_de_praia_azul1.png" id="6_3a44l"]
-[ext_resource type="Texture2D" uid="uid://b2cgo55y8l2j" path="res://Assets/Sprites/Props/Blocos/Fantasia/araras_fantasias1.png" id="6_bvt00"]
-[ext_resource type="Texture2D" uid="uid://cnn1oyci638np" path="res://Assets/Sprites/Props/Blocos/Pscina/Piscina_1.0.png" id="6_pa6b8"]
-[ext_resource type="Texture2D" uid="uid://bsw2ky6x0g01a" path="res://Assets/Sprites/Props/Blocos/Pscina/cadeira_de_praia_verde1.png" id="7_crh0w"]
-[ext_resource type="Texture2D" uid="uid://bv82c1qks3o0b" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão4.png" id="7_oqgf2"]
-[ext_resource type="Texture2D" uid="uid://dq0c5gadyg67a" path="res://Assets/Sprites/Props/Blocos/Pscina/casrelo_de_areia.png" id="8_0cmrb"]
-[ext_resource type="Texture2D" uid="uid://bh8m0cvuoxr4y" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão5.png" id="8_qxfql"]
-[ext_resource type="Texture2D" uid="uid://01b5vgyrsueu" path="res://Assets/Sprites/Props/Blocos/Fantasia/araras_fantasias2.png" id="10_vofx3"]
-[ext_resource type="Texture2D" uid="uid://7k4010d4jmq1" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão1.png" id="11_00k4y"]
-[ext_resource type="Texture2D" uid="uid://c21ksmd623w6t" path="res://Assets/Sprites/Props/Blocos/simbolo_prainha.png" id="11_pnhnk"]
-[ext_resource type="Texture2D" uid="uid://byp2pkfg4aaua" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão2.png" id="12_3a44l"]
-[ext_resource type="Texture2D" uid="uid://b6i5rawewof20" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão3.png" id="13_0cmrb"]
-[ext_resource type="SpriteFrames" uid="uid://wxu3trojrtac" path="res://Resources/Animations/Clothes/Body/SlimCharacterShirt.tres" id="13_6y3s5"]
-[ext_resource type="Texture2D" uid="uid://cbxkmd82oap38" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão6.png" id="16_pnhnk"]
-[ext_resource type="Texture2D" uid="uid://ydc6to5uw0iy" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão7.png" id="17_24uko"]
-[ext_resource type="Texture2D" uid="uid://diukucrf0detq" path="res://Assets/Sprites/Props/Blocos/simbolo_fantasias.png" id="21_pnhnk"]
+[ext_resource type="Resource" uid="uid://d1d5xeko15jrv" path="res://Resources/Blocks/BlocoCerveja.tres" id="8_oqgf2"]
+[ext_resource type="Resource" uid="uid://bq4cl61ut4f5i" path="res://Resources/Blocks/BlocoCarnaval.tres" id="16_53r2q"]
+[ext_resource type="Resource" uid="uid://cu0sc6nv4nsb" path="res://Resources/Blocks/BlocoFutebol.tres" id="17_6y3s5"]
+[ext_resource type="Texture2D" uid="uid://bpf7w3qv35e47" path="res://Assets/Sprites/Props/Blocos/BRASIL-SIL-SIL.png" id="31_t205d"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k5f4k"]
 
-[sub_resource type="Resource" id="Resource_0f350"]
-script = ExtResource("3_6phgx")
-name = "Praia"
-cor = Color(0.479716, 0.00299989, 0.947176, 1)
-props = Array[Texture2D]([ExtResource("5_ha31o"), ExtResource("6_3a44l"), ExtResource("7_crh0w"), ExtResource("8_0cmrb"), ExtResource("6_pa6b8")])
-simbol = ExtResource("11_pnhnk")
-slim_head_sprites = Array[SpriteFrames]([])
-slim_body_sprites = Array[SpriteFrames]([ExtResource("13_6y3s5")])
-slim_legs_sprites = Array[SpriteFrames]([])
-fat_head_sprites = Array[SpriteFrames]([])
-fat_body_sprites = Array[SpriteFrames]([ExtResource("5_gf56v")])
-fat_legs_sprites = Array[SpriteFrames]([])
-metadata/_custom_type_script = "uid://bvixhcrxsdm2v"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqkje"]
 size = Vector2(187.655, 90.285)
-
-[sub_resource type="Resource" id="Resource_8c0lf"]
-script = ExtResource("3_6phgx")
-name = "Carnaval"
-cor = Color(0.3946, 0.694676, 5.77569e-07, 1)
-props = Array[Texture2D]([ExtResource("6_bvt00"), ExtResource("10_vofx3"), ExtResource("11_00k4y"), ExtResource("12_3a44l"), ExtResource("13_0cmrb"), ExtResource("7_oqgf2"), ExtResource("8_qxfql"), ExtResource("16_pnhnk"), ExtResource("17_24uko")])
-simbol = ExtResource("21_pnhnk")
-slim_head_sprites = Array[SpriteFrames]([])
-slim_body_sprites = Array[SpriteFrames]([ExtResource("13_6y3s5")])
-slim_legs_sprites = Array[SpriteFrames]([])
-fat_head_sprites = Array[SpriteFrames]([])
-fat_body_sprites = Array[SpriteFrames]([ExtResource("5_gf56v")])
-fat_legs_sprites = Array[SpriteFrames]([])
-metadata/_custom_type_script = "uid://bvixhcrxsdm2v"
 
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
@@ -74,11 +32,11 @@ collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_k5f4k")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(703, -28, 704, 427, -54, 424, -39, 24, 0, 24, 1, 344, 529, 344, 531, 360, 639, 359, 637, 0, 531, 0, 530, 20, -40, 23, -40, -24)
+polygon = PackedVector2Array(678, -24, 680, 403, -43, 401, -40, 23, 0, 23, 0, 345, 530, 345, 530, 360, 639, 359, 637, 0, 531, 0, 531, 20, -40, 23, -40, -24)
 
 [node name="CharacterSpawn" type="Marker2D" parent="."]
 y_sort_enabled = true
-position = Vector2(139, 126)
+position = Vector2(471, 197)
 script = ExtResource("2_k5f4k")
 
 [node name="Button" type="Button" parent="."]
@@ -92,18 +50,35 @@ text = "Spawn Thing"
 z_index = -1
 
 [node name="Block2" parent="LevelBlocks" instance=ExtResource("4_81xng")]
-position = Vector2(120, 262)
-characteristics = SubResource("Resource_0f350")
+position = Vector2(123, 262)
+characteristics = ExtResource("5_nngtn")
 debug_color = Color(0.479716, 0.00299989, 0.947176, 1)
 shape = SubResource("RectangleShape2D_wqkje")
 
 [node name="Block" parent="LevelBlocks" instance=ExtResource("4_81xng")]
 position = Vector2(350, 137)
-characteristics = SubResource("Resource_8c0lf")
+characteristics = ExtResource("16_53r2q")
 debug_color = Color(0.3946, 0.694676, 5.77569e-07, 1)
+shape = SubResource("RectangleShape2D_wqkje")
+
+[node name="Block3" parent="LevelBlocks" instance=ExtResource("4_81xng")]
+position = Vector2(123, 135)
+characteristics = ExtResource("17_6y3s5")
+debug_color = Color(0.509804, 0.890196, 1, 1)
+shape = SubResource("RectangleShape2D_wqkje")
+
+[node name="Block4" parent="LevelBlocks" instance=ExtResource("4_81xng")]
+position = Vector2(353, 261)
+characteristics = ExtResource("8_oqgf2")
+debug_color = Color(1, 0.933333, 0, 1)
 shape = SubResource("RectangleShape2D_wqkje")
 
 [node name="Lixeira" parent="." instance=ExtResource("6_0f350")]
 position = Vector2(15, 36)
+
+[node name="Brasil-sil-sil" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(393, 32)
+texture = ExtResource("31_t205d")
 
 [connection signal="button_up" from="Button" to="CharacterSpawn" method="_on_button_button_up"]

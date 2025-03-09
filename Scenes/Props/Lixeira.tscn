@@ -125,7 +125,8 @@ _data = {
 }
 
 [node name="Lixeira" type="Area2D"]
-collision_layer = 0
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_wcfom")
 
 [node name="Visual" type="AnimatedSprite2D" parent="."]
@@ -150,5 +151,5 @@ collision_mask = 0
 position = Vector2(5, 6.5)
 shape = SubResource("RectangleShape2D_nmwt5")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]

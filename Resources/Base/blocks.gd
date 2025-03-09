@@ -2,6 +2,9 @@
 class_name Blocks
 extends Resource
 
+# Se esse bloco é ativo / contabilizado na contação de pontos
+@export var active : bool = true
+
 # Nome do bloco, por conveniência e para checagem
 @export var name : String = "mamamia"
 

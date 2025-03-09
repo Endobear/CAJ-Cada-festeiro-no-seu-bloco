@@ -11,6 +11,8 @@ extends Node2D
 var dragging : bool = false
 
 
+
+
 func _ready():
 	if level_blocks.get_child_count() > 0:
 		Globals.populateBlocks(level_blocks.get_children())

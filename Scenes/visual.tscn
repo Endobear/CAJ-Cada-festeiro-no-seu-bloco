@@ -7,7 +7,7 @@
 [node name="Visual" type="AnimatedSprite2D"]
 texture_filter = 1
 sprite_frames = ExtResource("1_hftnc")
-animation = &"Idle"
+animation = &"Dancing"
 autoplay = "Idle"
 script = ExtResource("1_32ndk")
 

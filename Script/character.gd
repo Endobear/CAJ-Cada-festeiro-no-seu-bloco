@@ -11,7 +11,7 @@ const SLIM_CHARACTER_FRAMES = preload("res://Resources/Animations/SlimCharacter.
 var visual: CharacterVisual
 
 var direction : Vector2
-var speed : float = 100
+var speed : float = 50
 
 var is_dragged : bool = false
 
@@ -46,9 +46,12 @@ func _physics_process(delta: float) -> void:
 			
 			move_and_slide()
 			if block_detector.get_overlapping_areas():
-				if block_detector.get_overlapping_areas()[0] is BlockArea:
+				if block_detector.get_overlapping_areas()[0] is BlockArea and block_detector.get_overlapping_areas()[0].characteristics.active:					
 					var area = block_detector.get_overlapping_areas()[0]
 					direction = -global_position.direction_to(area.global_position)
+					
+					
+					
 					direction.rotated(deg_to_rad(randf_range(-30,30)))
 			
 			visual.play("Walking")
@@ -76,7 +79,7 @@ func _physics_process(delta: float) -> void:
 			var mouse_offset = Vector2(3,15) if !visual.flip_h else Vector2(-3,15)
 			
 			if global_position.distance_to(get_global_mouse_position() + mouse_offset) > 2:
-				global_position += global_position.direction_to(get_global_mouse_position() + mouse_offset) * delta * 2 * speed
+				global_position += global_position.direction_to(get_global_mouse_position() + mouse_offset) * delta * 5 * speed
 			else:
 				global_position = get_global_mouse_position() + mouse_offset
 			
@@ -98,6 +101,8 @@ func create_characteristics():
 		characteristics = Charactersistics.new()
 	characteristics.body = [characteristics.BODY_TYPE.SLIM,characteristics.BODY_TYPE.FAT].pick_random()
 	
+	if characteristics.body == characteristics.BODY_TYPE.FAT:
+		speed = speed/2
 
 
 func create_character_with_block(block : Blocks) -> void:
@@ -126,8 +131,10 @@ func generate_visuals():
 			
 			if characteristics.block.slim_body_sprites:
 				visual.body.sprite_frames = characteristics.block.slim_body_sprites.pick_random()
+			
 			if characteristics.block.slim_head_sprites:
 				visual.head.sprite_frames = characteristics.block.slim_head_sprites.pick_random()
+			
 			if characteristics.block.slim_legs_sprites:
 				visual.legs.sprite_frames = characteristics.block.slim_legs_sprites.pick_random()
 			
@@ -152,18 +159,31 @@ func _unhandled_input(event: InputEvent) -> void:
 				global_position = event.global_position + Vector2(0,14)
 				
 			Globals.dragging = null
-			if block_detector.has_overlapping_areas() and block_detector.get_overlapping_areas()[0] is BlockArea:
-				is_in_block = true
-				# Código de detecção de tipo de bloco aqui
-				var block = block_detector.get_overlapping_areas()[0]
+			if block_detector.has_overlapping_areas():
+				var b = block_detector.get_overlapping_areas()[0]
 				
-				if block.characteristics  == characteristics.block:
-					block.ponto()
-					visual.play(["Idle","Dancing"].pick_random())
-				else:
-					block.strike()
-					end_life()
+				if b is BlockArea:
+					if b.characteristics.active:
+						is_in_block = true
+						# Código de detecção de tipo de bloco aqui
+						var block = b
+						
+						if block.characteristics  == characteristics.block:
+							block.ponto()
+							visual.play(["Idle","Dancing"].pick_random())
+						else:
+							block.strike()
+							end_life()
+							
+				elif b is Lixeira:
+					if not Globals.is_in_active(characteristics.block):
+						Globals.add_point()
+						print("point")
+					else:
+						Globals.add_strike()
+						print("strike")
 					
+					end_life()
 
 func end_life():
 	queue_free()

@@ -5,8 +5,10 @@ extends Marker2D
 
 const CHARACTER = preload("res://Scenes/character.tscn")
 
-	
-	
+
+
+
+
 func spawn_characters(amount : int) -> void :
 	if not blocks:
 		return

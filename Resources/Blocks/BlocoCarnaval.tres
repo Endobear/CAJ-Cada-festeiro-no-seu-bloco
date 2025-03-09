@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Blocks" load_steps=15 format=3 uid="uid://bq4cl61ut4f5i"]
+
+[ext_resource type="SpriteFrames" uid="uid://bh3ase6rux3f" path="res://Resources/Animations/Clothes/Body/FatCharacterShirt.tres" id="1_fb3cf"]
+[ext_resource type="Texture2D" uid="uid://b2cgo55y8l2j" path="res://Assets/Sprites/Props/Blocos/Fantasia/araras_fantasias1.png" id="2_6covu"]
+[ext_resource type="Texture2D" uid="uid://01b5vgyrsueu" path="res://Assets/Sprites/Props/Blocos/Fantasia/araras_fantasias2.png" id="3_ikvjq"]
+[ext_resource type="Texture2D" uid="uid://7k4010d4jmq1" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão1.png" id="4_2x8kd"]
+[ext_resource type="Texture2D" uid="uid://byp2pkfg4aaua" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão2.png" id="5_1dnlw"]
+[ext_resource type="Texture2D" uid="uid://b6i5rawewof20" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão3.png" id="6_l5cve"]
+[ext_resource type="Texture2D" uid="uid://bv82c1qks3o0b" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão4.png" id="7_xku8h"]
+[ext_resource type="Texture2D" uid="uid://bh8m0cvuoxr4y" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão5.png" id="8_7jj70"]
+[ext_resource type="Texture2D" uid="uid://cbxkmd82oap38" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão6.png" id="9_f4vxu"]
+[ext_resource type="Texture2D" uid="uid://ydc6to5uw0iy" path="res://Assets/Sprites/Props/Blocos/Fantasia/Mascara_chão7.png" id="10_f825g"]
+[ext_resource type="Texture2D" uid="uid://3xcni1bbg618" path="res://Assets/Sprites/Props/Blocos/Fantasia/Confete.png" id="11_tuph3"]
+[ext_resource type="Script" uid="uid://bvixhcrxsdm2v" path="res://Resources/Base/blocks.gd" id="12_j7x7t"]
+[ext_resource type="Texture2D" uid="uid://diukucrf0detq" path="res://Assets/Sprites/Props/Blocos/simbolo_fantasias.png" id="13_v5vbv"]
+[ext_resource type="SpriteFrames" uid="uid://wxu3trojrtac" path="res://Resources/Animations/Clothes/Body/SlimCharacterShirt.tres" id="14_fns7y"]
+
+[resource]
+script = ExtResource("12_j7x7t")
+active = true
+name = "Carnaval"
+cor = Color(0.3946, 0.694676, 5.77569e-07, 1)
+props = Array[Texture2D]([ExtResource("2_6covu"), ExtResource("3_ikvjq"), ExtResource("4_2x8kd"), ExtResource("5_1dnlw"), ExtResource("6_l5cve"), ExtResource("7_xku8h"), ExtResource("8_7jj70"), ExtResource("9_f4vxu"), ExtResource("10_f825g"), ExtResource("11_tuph3")])
+simbol = ExtResource("13_v5vbv")
+slim_head_sprites = Array[SpriteFrames]([])
+slim_body_sprites = Array[SpriteFrames]([ExtResource("14_fns7y")])
+slim_legs_sprites = Array[SpriteFrames]([])
+fat_head_sprites = Array[SpriteFrames]([])
+fat_body_sprites = Array[SpriteFrames]([ExtResource("1_fb3cf")])
+fat_legs_sprites = Array[SpriteFrames]([])
+metadata/_custom_type_script = "uid://bvixhcrxsdm2v"

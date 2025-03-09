@@ -42,14 +42,20 @@ func _ready():
 		
 	if Engine.is_editor_hint():
 		return
+	
+	if characteristics and characteristics.active == true:
+		if characteristics.props.size() > 0:
+			for i in range(clamp(characteristics.props.size(),1,4)):
+				var prop = characteristics.props.pick_random()
+				characteristics.props.erase(prop)
+				prop_spawn(prop)
+				
+		spawn_banner()
+	
+	else:
+		pass
 		
-	if characteristics.props.size() > 0:
-		for i in range(clamp(characteristics.props.size(),1,4)):
-			var prop = characteristics.props.pick_random()
-			characteristics.props.erase(prop)
-			prop_spawn(prop)
-	
-	
+func spawn_banner():
 	var mastro = Sprite2D.new()
 	add_child(mastro)
 	mastro.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
