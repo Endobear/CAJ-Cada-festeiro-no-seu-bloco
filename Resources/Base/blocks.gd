@@ -2,8 +2,14 @@
 class_name Blocks
 extends Resource
 
+signal chaged_active_state
+
 # Se esse bloco é ativo / contabilizado na contação de pontos
-@export var active : bool = true
+@export var active : bool = true:
+	set(value):
+		active = value
+		chaged_active_state.emit()
+		
 
 # Nome do bloco, por conveniência e para checagem
 @export var name : String = "mamamia"

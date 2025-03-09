@@ -1,8 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct3i2hcnw5nux"]
+[gd_scene load_steps=6 format=3 uid="uid://ct3i2hcnw5nux"]
 
 [ext_resource type="Script" uid="uid://dphbmmba15l8p" path="res://Script/visual.gd" id="1_32ndk"]
 [ext_resource type="SpriteFrames" uid="uid://dldah0wg32g41" path="res://Resources/Animations/SlimCharacter.tres" id="1_hftnc"]
 [ext_resource type="SpriteFrames" uid="uid://wxu3trojrtac" path="res://Resources/Animations/Clothes/Body/SlimCharacterShirt.tres" id="3_yv1uo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yv1uo"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Dancing",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Grabbed",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j8qro"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Dancing",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Grabbed",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
 
 [node name="Visual" type="AnimatedSprite2D"]
 texture_filter = 1
@@ -29,14 +75,16 @@ mouse_filter = 1
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_yv1uo")
-animation = &"Dancing"
+animation = &"M"
 autoplay = "Idle"
 
 [node name="Head" type="AnimatedSprite2D" parent="."]
-animation = &"Dancing"
+sprite_frames = SubResource("SpriteFrames_yv1uo")
+animation = &"Walking"
 autoplay = "Idle"
 
 [node name="Legs" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j8qro")
 animation = &"Dancing"
 autoplay = "Idle"
 

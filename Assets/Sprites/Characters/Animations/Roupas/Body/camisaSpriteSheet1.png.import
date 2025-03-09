@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7nlbi7da0hrg"
-path="res://.godot/imported/camisaSpriteSheet1.png-84bff5abf46b5ddfc56c55ca5e12aa84.ctex"
+path="res://.godot/imported/camisaSpriteSheet1.png-1dab36161c2dd2f192c0beeafa29286c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/Animations/Roupas/camisaSpriteSheet1.png"
-dest_files=["res://.godot/imported/camisaSpriteSheet1.png-84bff5abf46b5ddfc56c55ca5e12aa84.ctex"]
+source_file="res://Assets/Sprites/Characters/Animations/Roupas/Body/camisaSpriteSheet1.png"
+dest_files=["res://.godot/imported/camisaSpriteSheet1.png-1dab36161c2dd2f192c0beeafa29286c.ctex"]
 
 [params]
 

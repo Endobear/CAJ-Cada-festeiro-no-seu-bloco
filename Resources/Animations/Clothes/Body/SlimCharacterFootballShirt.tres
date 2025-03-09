@@ -119,6 +119,11 @@ animations = [{
 "name": &"Idle",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"M",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_exkdj")

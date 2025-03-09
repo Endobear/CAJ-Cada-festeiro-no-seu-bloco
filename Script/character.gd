@@ -51,9 +51,11 @@ func _physics_process(delta: float) -> void:
 					direction = -global_position.direction_to(area.global_position)
 					
 					
+					var angle_rotation = randf_range(-30,30)
+					print(angle_rotation)
+					direction = direction.rotated(deg_to_rad(angle_rotation))
 					
-					direction.rotated(deg_to_rad(randf_range(-30,30)))
-			
+					
 			visual.play("Walking")
 		
 			if is_on_ceiling() || is_on_floor() :
@@ -169,10 +171,10 @@ func _unhandled_input(event: InputEvent) -> void:
 						var block = b
 						
 						if block.characteristics  == characteristics.block:
-							block.ponto()
+							Globals.add_point()
 							visual.play(["Idle","Dancing"].pick_random())
 						else:
-							block.strike()
+							Globals.add_strike(global_position)
 							end_life()
 							
 				elif b is Lixeira:
@@ -180,7 +182,7 @@ func _unhandled_input(event: InputEvent) -> void:
 						Globals.add_point()
 						print("point")
 					else:
-						Globals.add_strike()
+						Globals.add_strike(global_position)
 						print("strike")
 					
 					end_life()

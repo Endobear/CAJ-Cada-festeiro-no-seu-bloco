@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Blocks" load_steps=15 format=3 uid="uid://bq4cl61ut4f5i"]
+[gd_resource type="Resource" script_class="Blocks" load_steps=17 format=3 uid="uid://bq4cl61ut4f5i"]
 
 [ext_resource type="SpriteFrames" uid="uid://bh3ase6rux3f" path="res://Resources/Animations/Clothes/Body/FatCharacterShirt.tres" id="1_fb3cf"]
 [ext_resource type="Texture2D" uid="uid://b2cgo55y8l2j" path="res://Assets/Sprites/Props/Blocos/Fantasia/araras_fantasias1.png" id="2_6covu"]
@@ -13,18 +13,20 @@
 [ext_resource type="Texture2D" uid="uid://3xcni1bbg618" path="res://Assets/Sprites/Props/Blocos/Fantasia/Confete.png" id="11_tuph3"]
 [ext_resource type="Script" uid="uid://bvixhcrxsdm2v" path="res://Resources/Base/blocks.gd" id="12_j7x7t"]
 [ext_resource type="Texture2D" uid="uid://diukucrf0detq" path="res://Assets/Sprites/Props/Blocos/simbolo_fantasias.png" id="13_v5vbv"]
-[ext_resource type="SpriteFrames" uid="uid://wxu3trojrtac" path="res://Resources/Animations/Clothes/Body/SlimCharacterShirt.tres" id="14_fns7y"]
+[ext_resource type="SpriteFrames" uid="uid://cfm0p5hw8yrhw" path="res://Resources/Animations/Clothes/Body/SlimCharacterFantasiaShirt.tres" id="15_6covu"]
+[ext_resource type="SpriteFrames" uid="uid://dowf5gmddc5rq" path="res://Resources/Animations/Clothes/Head/SlimCharacterFantasiaHead.tres" id="15_ikvjq"]
+[ext_resource type="SpriteFrames" uid="uid://bqals70ussdoi" path="res://Resources/Animations/Clothes/Legs/SlimCharacterFantasiaPants.tres" id="16_ikvjq"]
 
 [resource]
 script = ExtResource("12_j7x7t")
 active = true
-name = "Carnaval"
+name = "Fantasia"
 cor = Color(0.3946, 0.694676, 5.77569e-07, 1)
 props = Array[Texture2D]([ExtResource("2_6covu"), ExtResource("3_ikvjq"), ExtResource("4_2x8kd"), ExtResource("5_1dnlw"), ExtResource("6_l5cve"), ExtResource("7_xku8h"), ExtResource("8_7jj70"), ExtResource("9_f4vxu"), ExtResource("10_f825g"), ExtResource("11_tuph3")])
 simbol = ExtResource("13_v5vbv")
-slim_head_sprites = Array[SpriteFrames]([])
-slim_body_sprites = Array[SpriteFrames]([ExtResource("14_fns7y")])
-slim_legs_sprites = Array[SpriteFrames]([])
+slim_head_sprites = Array[SpriteFrames]([ExtResource("15_ikvjq")])
+slim_body_sprites = Array[SpriteFrames]([ExtResource("15_6covu")])
+slim_legs_sprites = Array[SpriteFrames]([ExtResource("16_ikvjq")])
 fat_head_sprites = Array[SpriteFrames]([])
 fat_body_sprites = Array[SpriteFrames]([ExtResource("1_fb3cf")])
 fat_legs_sprites = Array[SpriteFrames]([])

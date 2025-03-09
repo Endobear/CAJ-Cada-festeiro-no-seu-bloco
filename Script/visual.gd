@@ -58,13 +58,18 @@ func _process(delta: float) -> void:
 		
 		
 		body.flip_h = flip_h
-		body.modulate = color_rect.color
+		if body.sprite_frames.has_animation("M"):
+			body.modulate = color_rect.color
+		
 		
 		head.flip_h = flip_h
-		head.modulate = color_rect.color
+		if head.sprite_frames.has_animation("M"):
+			head.modulate = color_rect.color
+		
 		
 		legs.flip_h = flip_h
-		legs.modulate = color_rect.color
+		if legs.sprite_frames.has_animation("M"):
+			legs.modulate = color_rect.color
 
 
 func _on_animation_changed() -> void:

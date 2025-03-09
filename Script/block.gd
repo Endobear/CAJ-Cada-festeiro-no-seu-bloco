@@ -5,6 +5,9 @@ extends Area2D
 const BANNER = preload("res://Assets/Sprites/Props/Blocos/banner.png")
 const MASTRO = preload("res://Assets/Sprites/Props/Blocos/mstro.png")
 
+const CONSTRUCTION_PROPS = [preload("res://Assets/Sprites/Props/Blocos/Vazio/caixa1.png"), preload("res://Assets/Sprites/Props/Blocos/Vazio/caixa2.png"), preload("res://Assets/Sprites/Props/Blocos/Vazio/caixas1.png"), preload("res://Assets/Sprites/Props/Blocos/Vazio/caixas2.png"), preload("res://Assets/Sprites/Props/Blocos/Vazio/em breve.png"), preload("res://Assets/Sprites/Props/Blocos/Vazio/ferramentas.png"), preload("res://Assets/Sprites/Props/Blocos/Vazio/pregos.png")]
+
+var props_spawned : Array[Sprite2D]
 
 @export var characteristics : Blocks
 
@@ -33,7 +36,7 @@ func ponto():
 	Globals.add_point()
 	
 func strike():
-	Globals.add_strike()
+	Globals.add_strike(global_position)
 
 
 func _ready():
@@ -44,17 +47,47 @@ func _ready():
 		return
 	
 	if characteristics and characteristics.active == true:
-		if characteristics.props.size() > 0:
-			for i in range(clamp(characteristics.props.size(),1,4)):
-				var prop = characteristics.props.pick_random()
-				characteristics.props.erase(prop)
-				prop_spawn(prop)
-				
+		characteristics.chaged_active_state.connect(update_active_props)
+		spawn_props()
 		spawn_banner()
-	
-	else:
-		pass
 		
+	else:
+		if characteristics:
+			characteristics.chaged_active_state.connect(update_active_props)
+		spawn_props_inactive()
+
+
+
+
+func spawn_props_inactive():
+	if props_spawned:
+		for p in props_spawned:
+			p.queue_free()
+		props_spawned.clear()
+	if !characteristics or characteristics.active == false:
+		var construction_props = CONSTRUCTION_PROPS.duplicate()
+		for prop in construction_props:
+			prop = construction_props.pick_random()
+			construction_props.erase(prop)
+			prop_spawn(prop)
+
+
+
+func spawn_props():
+	if props_spawned:
+		for p in props_spawned:
+			p.queue_free()
+		props_spawned.clear()
+	
+	if characteristics and characteristics.active == true:
+		if characteristics.props.size() > 0:
+			var props = characteristics.props.duplicate()
+			for i in range(clamp(props.size(),1,4)):
+				var prop = props.pick_random()
+				props.erase(prop)
+				prop_spawn(prop)
+
+
 func spawn_banner():
 	var mastro = Sprite2D.new()
 	add_child(mastro)
@@ -76,6 +109,10 @@ func spawn_banner():
 	banner.add_child(simbol)
 	simbol.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	simbol.texture = characteristics.simbol
+	
+	props_spawned.append(mastro)
+	props_spawned.append(banner)
+	props_spawned.append(simbol)
 		
 func prop_spawn(prop : Texture2D):
 	var sprite = Sprite2D.new()
@@ -88,6 +125,17 @@ func prop_spawn(prop : Texture2D):
 	var y = randf_range(shape.get_rect().position.y + prop.get_height(), shape.get_rect().position.y+ (shape.get_rect().size.y - prop.get_height()))
 	
 	sprite.position = Vector2(x,y)
+	props_spawned.append(sprite)
+
+
+func update_active_props():
+	if characteristics:
+		if characteristics.active:
+			spawn_props()
+			spawn_banner()
+		else:
+			spawn_props_inactive()
+
 
 func _draw() -> void:
 	if not Engine.is_editor_hint():

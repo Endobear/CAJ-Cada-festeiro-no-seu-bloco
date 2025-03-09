@@ -1,0 +1,138 @@
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://dowf5gmddc5rq"]
+
+[ext_resource type="Texture2D" uid="uid://hi1847ykmocq" path="res://Assets/Sprites/Characters/Animations/Roupas/Head/Fantasia/mascaraSpriteSheet1.png" id="1_hlyfc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8dl1"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m55wi"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54a8b"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu4u3"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4k5j"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61x3v"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsl8d"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12a84"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(48, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2ctr"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlw37"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpcf2"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4637l"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(48, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyv6g"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(0, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4oku"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(16, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ytku"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(32, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2row"]
+atlas = ExtResource("1_hlyfc")
+region = Rect2(48, 96, 16, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8dl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m55wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54a8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu4u3")
+}],
+"loop": true,
+"name": &"Dancing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4k5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61x3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsl8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12a84")
+}],
+"loop": true,
+"name": &"Grabbed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2ctr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlw37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpcf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4637l")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyv6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4oku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ytku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2row")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
