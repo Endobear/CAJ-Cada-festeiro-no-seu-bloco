@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CAJ"
-run/main_scene="uid://cf2jr3jhy2kqc"
+run/main_scene="uid://b2pbjtlecoa3v"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

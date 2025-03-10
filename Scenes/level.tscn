@@ -478,4 +478,5 @@ texture = ExtResource("16_2klc5")
 
 [connection signal="button_up" from="UI/Control/Button" to="CharacterSpawn" method="_on_button_button_up"]
 [connection signal="button_up" from="UI/GameOver/Panel/Control/VBoxContainer/RestartButton" to="." method="_on_restart_button_up"]
+[connection signal="button_up" from="UI/GameOver/Panel/Control/VBoxContainer/MenuButton" to="." method="_on_menu_button_button_up"]
 [connection signal="timeout" from="CharacterSpawn/CharacterSpawnTimer" to="CharacterSpawn" method="_on_character_spawn_timer_timeout"]

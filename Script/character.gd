@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		#print("error")
 	
 	
-	if !is_in_block and timer.time_left <= timer.wait_time/2:
+	if Globals.is_playing and !is_in_block and timer.time_left <= timer.wait_time/2:
 		if int(timer.time_left) % 2 == 0:
 			modulate = Color.from_rgba8(255,remap(timer.time_left,10,0,255,0),remap(timer.time_left,10,0,255,0))
 		else:
@@ -139,7 +139,7 @@ func generate_visuals():
 		visual = VISUAL.instantiate()
 		add_child(visual)
 		
-	var easter_egg = randi_range(0,100) < 5
+	var easter_egg = randi_range(0,100) < 1
 	
 	match characteristics.body:
 		Charactersistics.BODY_TYPE.SLIM:

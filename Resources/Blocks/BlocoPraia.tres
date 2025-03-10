@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Blocks" load_steps=12 format=3 uid="uid://csemeqxic8n3m"]
+[gd_resource type="Resource" script_class="Blocks" load_steps=15 format=3 uid="uid://csemeqxic8n3m"]
 
-[ext_resource type="SpriteFrames" uid="uid://bh3ase6rux3f" path="res://Resources/Animations/Clothes/Body/FatCharacterShirt.tres" id="1_lvspp"]
+[ext_resource type="SpriteFrames" uid="uid://c72xrlssmoj5m" path="res://Resources/Animations/Clothes/Legs/FatCharacterPraiaPants.tres" id="1_nbykp"]
+[ext_resource type="SpriteFrames" uid="uid://d1vd55mftigd" path="res://Resources/Animations/Clothes/Head/FatCharacterPraiaCap.tres" id="2_2khss"]
 [ext_resource type="Texture2D" uid="uid://dt38ilwsugxbt" path="res://Assets/Sprites/Props/Blocos/Pscina/Areia.png" id="2_nbykp"]
 [ext_resource type="Texture2D" uid="uid://ds2hqy1pyvjol" path="res://Assets/Sprites/Props/Blocos/Pscina/cadeira_de_praia_azul1.png" id="3_mnw7g"]
 [ext_resource type="Texture2D" uid="uid://bsw2ky6x0g01a" path="res://Assets/Sprites/Props/Blocos/Pscina/cadeira_de_praia_verde1.png" id="4_2khss"]
@@ -10,19 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://be0ynj7xi7vet" path="res://Assets/Sprites/Props/Blocos/Pscina/Bola_praia.png" id="8_lt4bi"]
 [ext_resource type="Script" uid="uid://bvixhcrxsdm2v" path="res://Resources/Base/blocks.gd" id="9_8ve7t"]
 [ext_resource type="Texture2D" uid="uid://c21ksmd623w6t" path="res://Assets/Sprites/Props/Blocos/simbolo_prainha.png" id="10_dgtqj"]
-[ext_resource type="SpriteFrames" uid="uid://wxu3trojrtac" path="res://Resources/Animations/Clothes/Body/SlimCharacterShirt.tres" id="11_44spg"]
+[ext_resource type="SpriteFrames" uid="uid://hprm6rqyc8wr" path="res://Resources/Animations/Clothes/Head/SlimCharacterPraiaCap.tres" id="10_lvspp"]
+[ext_resource type="SpriteFrames" uid="uid://c14ieclgj1df8" path="res://Resources/Animations/Clothes/NoClothes.tres" id="10_nbykp"]
+[ext_resource type="SpriteFrames" uid="uid://cnmbr001v0dhr" path="res://Resources/Animations/Clothes/Legs/SlimCharacterPraiaPants.tres" id="10_sm5h3"]
 
 [resource]
 script = ExtResource("9_8ve7t")
 active = true
 name = "Praia"
-cor = Color(0.479716, 0.00299989, 0.947176, 1)
+cor = Color(0.105, 0, 0.21, 1)
 props = Array[Texture2D]([ExtResource("2_nbykp"), ExtResource("3_mnw7g"), ExtResource("4_2khss"), ExtResource("5_lplf8"), ExtResource("6_hsu1g"), ExtResource("7_w3ad2"), ExtResource("8_lt4bi")])
 simbol = ExtResource("10_dgtqj")
-slim_head_sprites = Array[SpriteFrames]([])
-slim_body_sprites = Array[SpriteFrames]([ExtResource("11_44spg")])
-slim_legs_sprites = Array[SpriteFrames]([])
-fat_head_sprites = Array[SpriteFrames]([])
-fat_body_sprites = Array[SpriteFrames]([ExtResource("1_lvspp")])
-fat_legs_sprites = Array[SpriteFrames]([])
+slim_head_sprites = Array[SpriteFrames]([ExtResource("10_nbykp"), ExtResource("10_lvspp")])
+slim_body_sprites = Array[SpriteFrames]([])
+slim_legs_sprites = Array[SpriteFrames]([ExtResource("10_sm5h3")])
+fat_head_sprites = Array[SpriteFrames]([ExtResource("10_nbykp"), ExtResource("2_2khss")])
+fat_body_sprites = Array[SpriteFrames]([])
+fat_legs_sprites = Array[SpriteFrames]([ExtResource("1_nbykp")])
 metadata/_custom_type_script = "uid://bvixhcrxsdm2v"

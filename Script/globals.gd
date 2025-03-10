@@ -25,7 +25,8 @@ func populateBlocks(blocks : Array[Node]):
 	for block in blocks:
 		if block is BlockArea:
 			blocos.append(block)
-			block.characteristics.chaged_active_state.connect(update_active)
+			if not block.characteristics.chaged_active_state.is_connected(update_active):
+				block.characteristics.chaged_active_state.connect(update_active)
 			
 	update_active()
 	
@@ -55,8 +56,6 @@ func add_point():
 	points += 1
 
 
-func restart_level():
-	get_tree().reload_current_scene()
 
 func add_strike(sprite_position: Vector2):
 	strikes += 1
@@ -78,3 +77,12 @@ func is_in_active(b : Blocks):
 	
 	return false
 	
+
+func restart_level():
+	get_tree().reload_current_scene()
+	
+func main_menu():
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+func to_level():
+	get_tree().change_scene_to_file("res://Scenes/level.tscn")

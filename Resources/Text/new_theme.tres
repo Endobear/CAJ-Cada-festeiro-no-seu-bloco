@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://d0hdyc7v2a57y"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://d0hdyc7v2a57y"]
 
 [ext_resource type="FontFile" uid="uid://ctp46xree4vfb" path="res://Resources/Text/rainyhearts.ttf" id="1_twoqf"]
 [ext_resource type="StyleBox" uid="uid://dvwksfwbgd6ko" path="res://Resources/Text/normal_style_box.tres" id="2_6v7ky"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6v7ky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5n66y"]
 
 [resource]
 Button/colors/font_color = Color(0, 0.96, 0.048, 1)
@@ -20,10 +22,13 @@ Label/fonts/font = ExtResource("1_twoqf")
 LineEdit/fonts/font = null
 LinkButton/fonts/font = null
 MenuBar/fonts/font = null
-MenuButton/fonts/font = null
-OptionButton/fonts/font = null
-PopupMenu/fonts/font = null
+MenuButton/fonts/font = ExtResource("1_twoqf")
+OptionButton/fonts/font = ExtResource("1_twoqf")
+OptionButton/styles/hover = SubResource("StyleBoxEmpty_5n66y")
+OptionButton/styles/normal = ExtResource("2_6v7ky")
+PopupMenu/fonts/font = ExtResource("1_twoqf")
 PopupMenu/fonts/font_separator = null
+PopupMenu/styles/panel = ExtResource("2_6v7ky")
 ProgressBar/fonts/font = null
 RichTextLabel/fonts/bold_font = null
 RichTextLabel/fonts/bold_italics_font = null

@@ -1,0 +1,138 @@
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://osnipmfa0syt"]
+
+[ext_resource type="Texture2D" uid="uid://cu5o837v2y6ja" path="res://Assets/Sprites/Characters/Animations/Roupas/Head/Fantasia/cabecaSpriteSheet2.png" id="1_affen"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ac2e"]
+atlas = ExtResource("1_affen")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2pun"]
+atlas = ExtResource("1_affen")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agmm7"]
+atlas = ExtResource("1_affen")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_460d4"]
+atlas = ExtResource("1_affen")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pilyk"]
+atlas = ExtResource("1_affen")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyqjg"]
+atlas = ExtResource("1_affen")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yswf2"]
+atlas = ExtResource("1_affen")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0d0v"]
+atlas = ExtResource("1_affen")
+region = Rect2(48, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf2mb"]
+atlas = ExtResource("1_affen")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm0lp"]
+atlas = ExtResource("1_affen")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlva2"]
+atlas = ExtResource("1_affen")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5qhq"]
+atlas = ExtResource("1_affen")
+region = Rect2(48, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c66ad"]
+atlas = ExtResource("1_affen")
+region = Rect2(0, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri7w3"]
+atlas = ExtResource("1_affen")
+region = Rect2(16, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mde6h"]
+atlas = ExtResource("1_affen")
+region = Rect2(32, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw25e"]
+atlas = ExtResource("1_affen")
+region = Rect2(48, 96, 16, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ac2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2pun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agmm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_460d4")
+}],
+"loop": true,
+"name": &"Dancing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pilyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyqjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yswf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0d0v")
+}],
+"loop": true,
+"name": &"Grabbed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf2mb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm0lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlva2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5qhq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c66ad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri7w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mde6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw25e")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]

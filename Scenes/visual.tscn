@@ -1,31 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct3i2hcnw5nux"]
+[gd_scene load_steps=5 format=3 uid="uid://ct3i2hcnw5nux"]
 
 [ext_resource type="Script" uid="uid://dphbmmba15l8p" path="res://Script/visual.gd" id="1_32ndk"]
 [ext_resource type="SpriteFrames" uid="uid://dldah0wg32g41" path="res://Resources/Animations/SlimCharacterTemplate.tres" id="1_hftnc"]
-[ext_resource type="SpriteFrames" uid="uid://wxu3trojrtac" path="res://Resources/Animations/Clothes/Body/SlimCharacterShirt.tres" id="3_yv1uo"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yv1uo"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"Dancing",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"Grabbed",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"Walking",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://c14ieclgj1df8" path="res://Resources/Animations/Clothes/NoClothes.tres" id="3_yv1uo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j8qro"]
 animations = [{
@@ -79,8 +56,8 @@ animation = &"M"
 autoplay = "Idle"
 
 [node name="Head" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_yv1uo")
-animation = &"Walking"
+sprite_frames = ExtResource("3_yv1uo")
+animation = &"Grabbed"
 autoplay = "Idle"
 
 [node name="Legs" type="AnimatedSprite2D" parent="."]

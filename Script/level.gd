@@ -57,3 +57,7 @@ func game_over():
 
 func _on_restart_button_up() -> void:
 	Globals.restart_level()
+
+
+func _on_menu_button_button_up() -> void:
+	Globals.main_menu()

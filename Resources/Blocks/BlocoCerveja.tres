@@ -1,22 +1,27 @@
-[gd_resource type="Resource" script_class="Blocks" load_steps=6 format=3 uid="uid://d1d5xeko15jrv"]
+[gd_resource type="Resource" script_class="Blocks" load_steps=11 format=3 uid="uid://d1d5xeko15jrv"]
 
-[ext_resource type="SpriteFrames" uid="uid://bh3ase6rux3f" path="res://Resources/Animations/Clothes/Body/FatCharacterShirt.tres" id="1_aaknw"]
+[ext_resource type="SpriteFrames" uid="uid://0ww8hhn24ffk" path="res://Resources/Animations/Clothes/Body/FatCharacterCervejaShirt.tres" id="1_lvx6j"]
+[ext_resource type="SpriteFrames" uid="uid://6uu6vhk2bdyi" path="res://Resources/Animations/Clothes/Head/FatCharacterCervejaHead.tres" id="2_aaknw"]
 [ext_resource type="Texture2D" uid="uid://wxqmq6atjnnt" path="res://Assets/Sprites/Props/Blocos/Cerveja/BARRIL.png" id="2_xtdi4"]
 [ext_resource type="Script" uid="uid://bvixhcrxsdm2v" path="res://Resources/Base/blocks.gd" id="4_574ni"]
+[ext_resource type="SpriteFrames" uid="uid://rbhvyuegoiy3" path="res://Resources/Animations/Clothes/Legs/FatCharacterCervejaPants.tres" id="4_rca8n"]
 [ext_resource type="Texture2D" uid="uid://qxc4bd1m52h" path="res://Assets/Sprites/Props/Blocos/simbolo_breja.png" id="5_aaknw"]
-[ext_resource type="SpriteFrames" uid="uid://bkp72dusobnj6" path="res://Resources/Animations/Clothes/Body/SlimCharacterFootballShirt.tres" id="6_tm0xr"]
+[ext_resource type="SpriteFrames" uid="uid://cy0liwhjhujm" path="res://Resources/Animations/Clothes/Body/SlimCharacterCervejaShirt.tres" id="5_xtdi4"]
+[ext_resource type="SpriteFrames" uid="uid://783iubr4muxn" path="res://Resources/Animations/Clothes/Head/SlimCharacterCervejaHead.tres" id="6_u4wkt"]
+[ext_resource type="SpriteFrames" uid="uid://c14ieclgj1df8" path="res://Resources/Animations/Clothes/NoClothes.tres" id="7_aaknw"]
+[ext_resource type="SpriteFrames" uid="uid://djy5dvexf7cqk" path="res://Resources/Animations/Clothes/Legs/SlimCharacterCervejaPants.tres" id="8_ka8gu"]
 
 [resource]
 script = ExtResource("4_574ni")
 active = true
 name = "Cerveja"
-cor = Color(1, 0.933333, 0, 1)
+cor = Color(0.17, 0.158667, 0, 1)
 props = Array[Texture2D]([ExtResource("2_xtdi4")])
 simbol = ExtResource("5_aaknw")
-slim_head_sprites = Array[SpriteFrames]([])
-slim_body_sprites = Array[SpriteFrames]([ExtResource("6_tm0xr")])
-slim_legs_sprites = Array[SpriteFrames]([])
-fat_head_sprites = Array[SpriteFrames]([])
-fat_body_sprites = Array[SpriteFrames]([ExtResource("1_aaknw")])
-fat_legs_sprites = Array[SpriteFrames]([])
+slim_head_sprites = Array[SpriteFrames]([ExtResource("6_u4wkt"), ExtResource("7_aaknw")])
+slim_body_sprites = Array[SpriteFrames]([ExtResource("5_xtdi4")])
+slim_legs_sprites = Array[SpriteFrames]([ExtResource("8_ka8gu")])
+fat_head_sprites = Array[SpriteFrames]([ExtResource("7_aaknw"), ExtResource("2_aaknw")])
+fat_body_sprites = Array[SpriteFrames]([ExtResource("1_lvx6j")])
+fat_legs_sprites = Array[SpriteFrames]([ExtResource("4_rca8n")])
 metadata/_custom_type_script = "uid://bvixhcrxsdm2v"

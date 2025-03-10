@@ -1,0 +1,222 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2pbjtlecoa3v"]
+
+[ext_resource type="Texture2D" uid="uid://dluoaywcjlvox" path="res://Assets/Sprites/Maps/Mapa_rascunho.png" id="1_1ehe0"]
+[ext_resource type="Script" uid="uid://d3mwytbuhfefb" path="res://Script/main_menu.gd" id="1_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://ib0ucixvd54t" path="res://Assets/Sprites/UI/Titulo_com_fundo_branco.png" id="2_48xlc"]
+[ext_resource type="Theme" uid="uid://d0hdyc7v2a57y" path="res://Resources/Text/new_theme.tres" id="3_1ehe0"]
+[ext_resource type="FontFile" uid="uid://ctp46xree4vfb" path="res://Resources/Text/rainyhearts.ttf" id="5_n45e2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_opfnp"]
+font = ExtResource("5_n45e2")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ce3w2")
+
+[node name="MapaRascunho" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(320, 180)
+texture = ExtResource("1_1ehe0")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.304688
+anchor_right = 0.695313
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Initial" type="Control" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Initial"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 36.0
+offset_right = 80.0
+offset_bottom = 115.0
+grow_horizontal = 2
+texture = ExtResource("2_48xlc")
+
+[node name="Control" type="Control" parent="Panel/Initial"]
+layout_mode = 1
+anchor_left = 0.204
+anchor_top = 0.436111
+anchor_right = 0.8
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Initial/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="Start" type="Button" parent="Panel/Initial/Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_1ehe0")
+text = "PLAY_BUTTON"
+
+[node name="HowToPlay" type="Button" parent="Panel/Initial/Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_1ehe0")
+text = "HOW_BUTTON"
+
+[node name="Options" type="Button" parent="Panel/Initial/Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_1ehe0")
+text = "OPTIONS_BUTTON"
+
+[node name="HowToPlay" type="Control" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Instructions" type="Label" parent="Panel/HowToPlay"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -179.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HOW_TEXT"
+label_settings = SubResource("LabelSettings_opfnp")
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="Control" type="Control" parent="Panel/HowToPlay"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HowToPlay/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="Back" type="Button" parent="Panel/HowToPlay/Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_1ehe0")
+text = "BACK_BUTTON"
+
+[node name="Options" type="Control" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Panel/Options"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Options/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="Back" type="Button" parent="Panel/Options/Control/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_1ehe0")
+text = "BACK_BUTTON"
+
+[node name="Control2" type="Control" parent="Panel/Options"]
+layout_mode = 1
+anchor_top = 0.144444
+anchor_right = 1.0
+anchor_bottom = 0.302778
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Options/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Language" type="Label" parent="Panel/Options/Control2/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "CHOSE_LANGUAGE_TEXT"
+label_settings = SubResource("LabelSettings_opfnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LanguageOption" type="OptionButton" parent="Panel/Options/Control2/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_1ehe0")
+alignment = 1
+item_count = 2
+popup/item_0/text = "  en   "
+popup/item_0/id = 0
+popup/item_1/text = "  pt   "
+popup/item_1/id = 1
+
+[connection signal="button_up" from="Panel/Initial/Control/VBoxContainer/Start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="Panel/Initial/Control/VBoxContainer/HowToPlay" to="." method="_on_how_to_play_button_up"]
+[connection signal="button_up" from="Panel/Initial/Control/VBoxContainer/Options" to="." method="_on_options_button_up"]
+[connection signal="button_up" from="Panel/HowToPlay/Control/VBoxContainer/Back" to="." method="_on_htp_back_button_up"]
+[connection signal="button_up" from="Panel/Options/Control/VBoxContainer/Back" to="." method="_on_opt_back_button_up"]
+[connection signal="item_selected" from="Panel/Options/Control2/HBoxContainer/LanguageOption" to="." method="_on_language_option_item_selected"]

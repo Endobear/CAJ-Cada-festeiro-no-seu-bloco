@@ -15,7 +15,7 @@
 script = ExtResource("6_qpuun")
 active = true
 name = "Futebol"
-cor = Color(0.509804, 0.890196, 1, 1)
+cor = Color(0, 0.98, 0.0163333, 1)
 props = Array[Texture2D]([ExtResource("4_rf1iu"), ExtResource("5_k576g")])
 simbol = ExtResource("7_pjv4g")
 slim_head_sprites = Array[SpriteFrames]([ExtResource("9_2mep3")])
