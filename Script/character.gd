@@ -114,7 +114,7 @@ func create_characteristics():
 		# Também verificar quais são os blocos no nível para não criar características sem bloco-
 		# se for o caso do personagem não ter bloco
 		characteristics = Charactersistics.new()
-	characteristics.body = [characteristics.BODY_TYPE.SLIM,characteristics.BODY_TYPE.FAT].pick_random()
+	characteristics.body = [characteristics.BODY_TYPE.SLIM,characteristics.BODY_TYPE.SLIM,characteristics.BODY_TYPE.SLIM,characteristics.BODY_TYPE.FAT].pick_random()
 	
 	if characteristics.body == characteristics.BODY_TYPE.FAT:
 		speed = speed/2

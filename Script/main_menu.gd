@@ -8,7 +8,9 @@ extends Control
 
 enum MENU_PAGES {INITIAL,HOWTOPLAY,OPTIONS}
 
-@onready var language_option: OptionButton = $Panel/Options/Control2/HBoxContainer/LanguageOption
+@onready var language_option: OptionButton = $Panel/Options/Control4/VBoxContainer/Control2/HBoxContainer/LanguageOption
+
+const CLICK_CLICK_MONO = preload("res://Assets/Sounds/click-click-mono.wav")
 
 
 func _ready() -> void:
@@ -51,19 +53,41 @@ func _on_start_button_up() -> void:
 
 func _on_how_to_play_button_up() -> void:
 	change_menu(MENU_PAGES.HOWTOPLAY)
+	Globals.sfx.stream = CLICK_CLICK_MONO
+	Globals.sfx.play()
 
 
 func _on_htp_back_button_up() -> void:
 	change_menu(MENU_PAGES.INITIAL)
+	Globals.sfx.stream = CLICK_CLICK_MONO
+	Globals.sfx.play()
 
 
 func _on_options_button_up() -> void:
 	change_menu(MENU_PAGES.OPTIONS)
+	Globals.sfx.stream = CLICK_CLICK_MONO
+	Globals.sfx.play()
 
 
 func _on_opt_back_button_up() -> void:
 	change_menu(MENU_PAGES.INITIAL)
+	Globals.sfx.stream = CLICK_CLICK_MONO
+	Globals.sfx.play()
 
 
 func _on_language_option_item_selected(index: int) -> void:
 	TranslationServer.set_locale(language_option.get_item_text(index))
+
+
+
+
+func _on_master_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))
+
+
+func _on_sfx_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value))
+
+
+func _on_music_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("MUSIC"), linear_to_db(value))

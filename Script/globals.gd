@@ -2,6 +2,7 @@ extends Node
 
 const STRIKE = preload("res://Scenes/UI/strike.tscn")
 const LEVEL = preload("res://Scenes/level.tscn")
+const POP = preload("res://Assets/Sounds/pop.mp3")
 
 var dragging : Character
 
@@ -18,6 +19,20 @@ signal game_over
 
 var is_playing : bool = false
 
+
+var music : AudioStreamPlayer
+var sfx : AudioStreamPlayer
+
+func _ready() -> void:
+	music = AudioStreamPlayer.new()
+	sfx = AudioStreamPlayer.new()
+	
+	add_child(music)
+	add_child(sfx)
+	
+	music.bus = "MUSIC"
+	sfx.bus = "SFX"
+	
 
 func populateBlocks(blocks : Array[Node]):
 	blocos.clear()
@@ -64,6 +79,9 @@ func add_strike(sprite_position: Vector2):
 	add_child(sprite)
 	sprite.global_position = sprite_position
 	sprite.z_index = 5
+	
+	sfx.stream = POP
+	sfx.play()
 	
 	if strikes > 2:
 		#get_tree().reload_current_scene()

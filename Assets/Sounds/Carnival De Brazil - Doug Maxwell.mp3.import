@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://l0kaki7a38t8"
+path="res://.godot/imported/Carnival De Brazil - Doug Maxwell.mp3-89fdb28e1deb32b304979661ea6be6b4.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Carnival De Brazil - Doug Maxwell.mp3"
+dest_files=["res://.godot/imported/Carnival De Brazil - Doug Maxwell.mp3-89fdb28e1deb32b304979661ea6be6b4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

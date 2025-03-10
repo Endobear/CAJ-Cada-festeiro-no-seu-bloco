@@ -216,6 +216,7 @@ offset_bottom = 30.0
 label_settings = SubResource("LabelSettings_ha31o")
 
 [node name="Button" type="Button" parent="UI/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -226,6 +227,7 @@ offset_left = -107.0
 offset_top = -31.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 2
 text = "Spawn Thing"
 
 [node name="GameOver" type="Control" parent="UI"]
@@ -372,25 +374,25 @@ z_index = -1
 [node name="Block2" parent="LevelBlocks" instance=ExtResource("4_81xng")]
 position = Vector2(123, 262)
 characteristics = ExtResource("5_nngtn")
-debug_color = Color(0.479716, 0.00299989, 0.947176, 1)
+debug_color = Color(0.105, 0, 0.21, 1)
 shape = SubResource("RectangleShape2D_wqkje")
 
 [node name="Block" parent="LevelBlocks" instance=ExtResource("4_81xng")]
 position = Vector2(350, 137)
 characteristics = ExtResource("16_53r2q")
-debug_color = Color(0.3946, 0.694676, 5.77569e-07, 1)
+debug_color = Color(0.0736667, 0.13, 0, 1)
 shape = SubResource("RectangleShape2D_wqkje")
 
 [node name="Block3" parent="LevelBlocks" instance=ExtResource("4_81xng")]
 position = Vector2(123, 135)
 characteristics = ExtResource("17_6y3s5")
-debug_color = Color(0.509804, 0.890196, 1, 1)
+debug_color = Color(0, 0.98, 0.0163333, 1)
 shape = SubResource("RectangleShape2D_wqkje")
 
 [node name="Block4" parent="LevelBlocks" instance=ExtResource("4_81xng")]
 position = Vector2(353, 261)
 characteristics = ExtResource("8_oqgf2")
-debug_color = Color(1, 0.933333, 0, 1)
+debug_color = Color(0.17, 0.158667, 0, 1)
 shape = SubResource("RectangleShape2D_wqkje")
 
 [node name="Lixeira" parent="." instance=ExtResource("6_0f350")]

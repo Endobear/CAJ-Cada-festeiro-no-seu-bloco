@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfldqklknid2y"
+path="res://.godot/imported/Havana Brazhumba - Ezra Lipp.mp3-ded6c44af1e2298895923a401d4ed417.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Havana Brazhumba - Ezra Lipp.mp3"
+dest_files=["res://.godot/imported/Havana Brazhumba - Ezra Lipp.mp3-ded6c44af1e2298895923a401d4ed417.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

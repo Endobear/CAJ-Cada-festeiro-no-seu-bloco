@@ -19,7 +19,7 @@ var time_elapsed : float = 0.0
 @onready var animation_player: AnimationPlayer = $UI/AnimationPlayer
 @onready var time_label: Label = $UI/GameOver/Panel/TimerGameOver
 
-
+var songs : Array[AudioStream] = [preload("res://Assets/Sounds/Carnival De Brazil - Doug Maxwell.mp3"), preload("res://Assets/Sounds/Havana Brazhumba - Ezra Lipp.mp3")]
 
 
 
@@ -29,6 +29,9 @@ func _ready():
 	reload_blocks()
 	
 	time_elapsed = 0.0
+	
+	Globals.music.stream = songs.pick_random()
+	Globals.music.play()
 	
 	Globals.start_game(self)
 	Globals.game_over.connect(game_over)
@@ -50,6 +53,8 @@ func reload_blocks():
 func game_over():
 	var minutes = time_elapsed / 60
 	var seconds = fmod(time_elapsed,60)
+	
+	Globals.music.stop()
 	
 	time_label.text = tr("TIME_TEXT") + " %01d" % minutes + " : " + "%02d" % seconds
 	animation_player.play("game_over")
